@@ -17,6 +17,8 @@ config/icon="res://Wellvos cumdump/cootsheadblender.png"
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=640
+window/size/test_height=480
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
