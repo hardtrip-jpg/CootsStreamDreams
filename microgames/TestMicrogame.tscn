@@ -200,6 +200,7 @@ step_amounts = 3
 area_array = [ NodePath("Main"), NodePath("Other") ]
 
 [node name="Main" type="Area2D" parent="."]
+position = Vector2( -640, -192 )
 
 [node name="MainSprite" type="Sprite" parent="Main"]
 scale = Vector2( 0.15, 0.15 )
@@ -209,7 +210,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Other" type="Area2D" parent="."]
-position = Vector2( -640, 0 )
+position = Vector2( 640, 256 )
 
 [node name="OtherSprite" type="Sprite" parent="Other"]
 scale = Vector2( 0.15, 0.15 )
@@ -222,9 +223,10 @@ shape = SubResource( 3 )
 one_shot = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 256.0
-margin_right = 296.0
-margin_bottom = 14.0
+margin_left = -832.0
+margin_top = 512.0
+margin_right = -718.0
+margin_bottom = 567.0
 custom_fonts/font = SubResource( 2 )
 text = "test"
 

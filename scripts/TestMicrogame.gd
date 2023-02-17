@@ -2,17 +2,17 @@ extends Node2D
 
 onready var timer := $Timer
 onready var label := $Label
-onready var animation := $AnimationPlayer
+onready var animation_steps := $AnimationPlayer
+onready var animation_timer := $AnimationTimer
 
-export var step_amounts : int
 export var current_speed := 1.0
 export var timer_time := 3.0
 export var area_array : Array = []
 
-
 var mouse_over := false
 var is_success := false
 var current_step := 1
+var step_amounts : int
 
 func _ready() -> void:
 	for area in area_array:
@@ -20,10 +20,11 @@ func _ready() -> void:
 			var current_area = get_node(area)
 			current_area.connect("mouse_entered", self, "_on_mouse_entered")
 			current_area.connect("mouse_exited", self, "_on_mouse_exited")
+	step_amounts = area_array.size() + 1
 	timer.connect("timeout", self, "_on_timer_timeout")
 	timer.wait_time = timer_time / current_speed
-	animation.playback_speed = animation.playback_speed * current_speed
-	animation.play("step" + str(current_step))
+	animation_steps.playback_speed = animation_steps.playback_speed * current_speed
+	animation_steps.play("step" + str(current_step))
 	timer.start()
 
 #Set Timer Label
@@ -40,9 +41,9 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if mouse_over and event.is_action_pressed("click"):
 		current_step += 1
-		animation.play("step" + str(current_step))
+		animation_steps.play("step" + str(current_step))
 	elif event.is_action_pressed("click"):
-		_on_timer_timeout()
+		is_over_failure()
 
 func _on_mouse_entered() -> void:
 	mouse_over = true
@@ -50,17 +51,26 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	mouse_over = false
 
+#Special
 func is_over_success() -> void:
 	is_success = true
-	timer.stop()
-	_on_timer_timeout()
-
+	disable()
+	label.text = "Success"
+	
+func is_over_failure() -> void:
+	disable()
+	label.text = "Failure"
+	Global.remaining_health -= 1
+	
+func disable() -> void:
+	set_process_input(false)
+	set_process(false)
+	
+func transition_out() -> void:
+	SceneTransition.change_scene("res://uiscenes/TestInbetween.tscn","dissolve")
 
 #Timer
 func _on_timer_timeout() -> void:
-	set_process_input(false)
-	set_process(false)
-	if is_success:
-		label.text = "Success"
-	else:
-		label.text = "Failed"
+	if !is_success:
+		is_over_failure()
+	transition_out()
