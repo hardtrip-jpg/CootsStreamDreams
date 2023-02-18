@@ -4,7 +4,7 @@ var health := 4
 var remaining_health := health
 
 var default_speed := 1
-var current_speed := default_speed
+var current_speed := 1
 
 var level_amount := 1
 

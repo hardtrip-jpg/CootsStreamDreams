@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
-[ext_resource path="res://textures/amongus/votingscreen.png" type="Texture" id=2]
+[ext_resource path="res://textures/amongus/amongusgamebackground.png" type="Texture" id=2]
 [ext_resource path="res://fonts/Baskic8-Bold.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://textures/amongus/amongusgame.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 313.5, 56 )
+extents = Vector2( 302, 136 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 100
@@ -167,36 +168,45 @@ tracks/3/keys = {
 
 [node name="DEFAmongUs" type="Node2D"]
 script = ExtResource( 1 )
-area_array = [ NodePath("Step1"), NodePath("Step2"), NodePath("Step3"), NodePath("Step4") ]
+area_array = [ NodePath("Step1"), NodePath("Step2"), NodePath("Step3"), NodePath("Step4"), NodePath("Step5") ]
 step_amounts = 2
+
+[node name="Space" type="Sprite" parent="."]
+position = Vector2( 959, 543 )
+texture = ExtResource( 2 )
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 954.711, 545 )
-scale = Vector2( 1.19341, 1.19341 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="Step1" type="Area2D" parent="."]
-position = Vector2( 577, 548 )
+position = Vector2( 590, 842 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
 shape = SubResource( 1 )
 
 [node name="Step2" type="Area2D" parent="."]
-position = Vector2( 576, 409 )
+position = Vector2( 591, 547 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step2"]
 shape = SubResource( 1 )
 
 [node name="Step3" type="Area2D" parent="."]
-position = Vector2( 1236, 411 )
+position = Vector2( 1227, 546 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step3"]
 shape = SubResource( 1 )
 
 [node name="Step4" type="Area2D" parent="."]
-position = Vector2( 1236, 273 )
+position = Vector2( 1227, 843 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step4"]
+shape = SubResource( 1 )
+
+[node name="Step5" type="Area2D" parent="."]
+position = Vector2( 1227, 249 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step5"]
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
