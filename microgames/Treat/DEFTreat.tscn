@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
+[ext_resource path="res://textures/treat/bg.jpg" type="Texture" id=2]
+[ext_resource path="res://textures/treat/treat.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Baskic8-Bold.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 30 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMove:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608.6, 554.6 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "step1"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMove:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608.6, 554.6 ) ]
+}
+
+[node name="DEFFindTreat" type="Node2D"]
+script = ExtResource( 1 )
+area_array = [ NodePath("Step1") ]
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 1057, 515 )
+scale = Vector2( 1.7, 1.7 )
+texture = ExtResource( 2 )
+
+[node name="MainMove" type="Sprite" parent="."]
+position = Vector2( 608.6, 554.6 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Step1" type="Area2D" parent="."]
+position = Vector2( 607.6, 558.6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
+position = Vector2( 2, -3 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 811.0
+margin_top = 546.0
+margin_right = 1037.0
+margin_bottom = 655.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/step1 = SubResource( 4 )
+
+[node name="AnimationTimer" type="AnimationPlayer" parent="."]

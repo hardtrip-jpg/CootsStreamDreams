@@ -5,7 +5,6 @@ onready var label := $Label
 onready var animation_steps := $AnimationPlayer
 onready var animation_timer := $AnimationTimer
 
-export var current_speed := 1.0
 export var timer_time := 3.0
 export var area_array : Array = []
 
@@ -13,6 +12,7 @@ var mouse_over := false
 var is_success := false
 var current_step := 1
 var step_amounts : int
+var current_speed := Global.current_speed
 
 func _ready() -> void:
 	for area in area_array:
