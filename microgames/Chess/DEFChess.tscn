@@ -1,0 +1,283 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
+[ext_resource path="res://textures/chess/w_queen_png_shadow_128px.png" type="Texture" id=2]
+[ext_resource path="res://textures/chess/ChessBG.png" type="Texture" id=3]
+[ext_resource path="res://textures/chess/b_king_png_128px.png" type="Texture" id=4]
+[ext_resource path="res://textures/chess/w_king_png_128px.png" type="Texture" id=5]
+[ext_resource path="res://textures/chess/w_queen_png_128px.png" type="Texture" id=6]
+[ext_resource path="res://fonts/Baskic8-Bold.otf" type="DynamicFontData" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 70, 70 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMove:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Step1:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Step2:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainMove:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 457, 798 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "step1"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMove:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Step1:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Step2:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainMove:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 457, 798 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "step2"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMove:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Step1:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Step2:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainMove:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 457, 798 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "step3"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMove:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 457, 249 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Step1:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Step2:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainMove:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+
+[node name="DEFChessGame" type="Node2D"]
+script = ExtResource( 1 )
+area_array = [ NodePath("Step1"), NodePath("Step2") ]
+step_amounts = 3
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 950, 750 )
+scale = Vector2( 1.7, 1.7 )
+texture = ExtResource( 3 )
+
+[node name="MainMove" type="Sprite" parent="."]
+position = Vector2( 457, 798 )
+texture = ExtResource( 6 )
+
+[node name="Other1" type="Sprite" parent="."]
+position = Vector2( 595, 385 )
+texture = ExtResource( 5 )
+
+[node name="Other2" type="Sprite" parent="."]
+position = Vector2( 320, 111 )
+texture = ExtResource( 4 )
+
+[node name="Step1" type="Area2D" parent="."]
+position = Vector2( 456, 802 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
+position = Vector2( 2, -3 )
+shape = SubResource( 1 )
+
+[node name="Step2" type="Area2D" parent="."]
+position = Vector2( 457, 251 )
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step2"]
+position = Vector2( 2, -3 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 811.0
+margin_top = 546.0
+margin_right = 1037.0
+margin_bottom = 655.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "step1"
+anims/RESET = SubResource( 3 )
+anims/step1 = SubResource( 4 )
+anims/step2 = SubResource( 5 )
+anims/step3 = SubResource( 6 )
+
+[node name="AnimationTimer" type="AnimationPlayer" parent="."]
