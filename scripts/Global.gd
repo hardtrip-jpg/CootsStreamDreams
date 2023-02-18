@@ -38,12 +38,12 @@ func _ready() -> void:
 	randomize()
 
 func _next_level() -> String:
-	current_array_size = current_game_levels.size() - 1
-	if current_array_size < 0:
+	if current_game_levels.size() <= 0:
 		current_game_levels = all_game_levels.duplicate()
-	next_level_key = int(rand_range(0, current_array_size))
+	current_array_size = current_game_levels.size()
+	next_level_key = randi() % current_array_size
 	current_game = current_game_levels[next_level_key]
-	pick_level = int(rand_range(0, current_game.size()))
+	pick_level = randi() % current_game.size()
 	var now_level : String = current_game[pick_level]
 	current_game_levels.remove(next_level_key)
 	return now_level

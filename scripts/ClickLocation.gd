@@ -7,11 +7,11 @@ onready var animation_timer := $AnimationTimer
 
 export var timer_time := 3.0
 export var area_array : Array = []
+export var step_amounts := 1
 
 var mouse_over := false
 var is_success := false
 var current_step := 1
-var step_amounts : int
 var current_speed := Global.current_speed
 
 func _ready() -> void:
@@ -20,7 +20,6 @@ func _ready() -> void:
 			var current_area = get_node(area)
 			current_area.connect("mouse_entered", self, "_on_mouse_entered")
 			current_area.connect("mouse_exited", self, "_on_mouse_exited")
-	step_amounts = area_array.size() + 1
 	timer.connect("timeout", self, "_on_timer_timeout")
 	timer.wait_time = timer_time / current_speed
 	animation_steps.playback_speed = animation_steps.playback_speed * current_speed
