@@ -16,8 +16,13 @@ var treat_games := [
 	"res://microgames/Treat/DEFTreat.tscn"
 ]
 
+var amongus_games := [
+	"res://microgames/AmongUs/DEFAmongUs.tscn"
+]
+
 var all_game_levels := [
 	chess_games,
+	amongus_games,
 	treat_games
 	]
 	

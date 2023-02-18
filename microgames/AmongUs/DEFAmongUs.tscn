@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
+[ext_resource path="res://textures/amongus/votingscreen.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Baskic8-Bold.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 313.5, 56 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 3 )
+
+[node name="DEFFindTreat" type="Node2D"]
+script = ExtResource( 1 )
+area_array = [ NodePath("Step1") ]
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 954.711, 545 )
+scale = Vector2( 1.19341, 1.19341 )
+texture = ExtResource( 2 )
+
+[node name="Step1" type="Area2D" parent="."]
+position = Vector2( 607.6, 558.6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
+position = Vector2( -30.6, -9.59998 )
+shape = SubResource( 1 )
+
+[node name="Step2" type="Area2D" parent="."]
+position = Vector2( 607.6, 420 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step2"]
+position = Vector2( -30.6, -9.59998 )
+shape = SubResource( 1 )
+
+[node name="Step3" type="Area2D" parent="."]
+position = Vector2( 1265, 419 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step3"]
+position = Vector2( -30.6, -9.59998 )
+shape = SubResource( 1 )
+
+[node name="Step4" type="Area2D" parent="."]
+position = Vector2( 1263, 282 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step4"]
+position = Vector2( -30.6, -9.59998 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 811.0
+margin_top = 546.0
+margin_right = 1037.0
+margin_bottom = 655.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTimer" type="AnimationPlayer" parent="."]
