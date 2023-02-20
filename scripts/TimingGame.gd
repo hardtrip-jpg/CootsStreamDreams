@@ -1,4 +1,4 @@
-extends "ClickLocation.gd"
+extends "DefaultGame.gd"
 
 onready var ontime := $OnTime
 
