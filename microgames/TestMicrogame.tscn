@@ -196,8 +196,8 @@ tracks/3/keys = {
 [node name="TestMicrogame" type="Node2D"]
 position = Vector2( 896, 512 )
 script = ExtResource( 2 )
-step_amounts = 3
 area_array = [ NodePath("Main"), NodePath("Other") ]
+step_amounts = 3
 
 [node name="Main" type="Area2D" parent="."]
 position = Vector2( -640, -192 )

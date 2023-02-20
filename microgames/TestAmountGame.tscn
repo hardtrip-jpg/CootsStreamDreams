@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/TimingGame.gd" type="Script" id=1]
+[ext_resource path="res://scripts/ClickAmount.gd" type="Script" id=1]
 [ext_resource path="res://textures/button/buttonuntime.jpg" type="Texture" id=2]
-[ext_resource path="res://textures/button/buttonsucess.jpg" type="Texture" id=3]
+[ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=3]
 [ext_resource path="res://fonts/Baskic8-Bold.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=5]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -53,65 +52,20 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("BG:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 2 ) ]
-}
-
-[sub_resource type="Animation" id=1]
-resource_name = "timing"
-length = 3.0
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [  ],
-"method": "_toggle_timing"
-}, {
-"args": [  ],
-"method": "_toggle_timing"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("BG:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ]
-}
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 967, 548 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 100
 font_data = ExtResource( 4 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 967, 548 )
-
-[node name="TestTimingGame" type="Node2D"]
+[node name="TestAmountGame" type="Node2D"]
+position = Vector2( 0, -5 )
 script = ExtResource( 1 )
 area_array = [ NodePath("Step1") ]
 step_amounts = 2
+game_text = "Click Amount"
+click_amount = 10
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 956, 542 )
@@ -126,14 +80,15 @@ anims/step2 = SubResource( 5 )
 
 [node name="AnimationTimer" type="AnimationPlayer" parent="."]
 
-[node name="OnTime" type="AnimationPlayer" parent="."]
-autoplay = "timing"
-anims/RESET = SubResource( 6 )
-anims/timing = SubResource( 1 )
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Step1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
+position = Vector2( 957, 538 )
+shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -156,11 +111,12 @@ margin_left = 785.0
 margin_top = 547.0
 margin_right = 921.0
 margin_bottom = 612.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 text = "test"
 
-[node name="Step1" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
-position = Vector2( 957, 538 )
-shape = SubResource( 2 )
+[node name="AmountText" type="Label" parent="."]
+margin_left = 904.0
+margin_top = 714.0
+margin_right = 944.0
+margin_bottom = 779.0
+custom_fonts/font = ExtResource( 3 )
