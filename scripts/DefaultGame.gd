@@ -27,7 +27,7 @@ func _ready() -> void:
 	timer.connect("timeout", self, "_on_timer_timeout")
 	timer.wait_time = timer_time / current_speed
 	label_game_text.text = game_text
-	animation_steps.playback_speed = animation_steps.playback_speed * current_speed
+	animation_steps.playback_speed = current_speed
 	animation_steps.play("step" + str(current_step))
 	timer.start()
 	
