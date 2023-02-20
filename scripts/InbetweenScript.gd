@@ -12,14 +12,17 @@ func _ready() -> void:
 	timer.connect("timeout", self, "timeout")
 	Global.level_amount += 1
 	Global.speed_level_amount += 1
+	current_label.text = str(Global.level_amount).pad_decimals(0).pad_zeros(3)
 	set_health()
-	current_label.text = str(Global.level_amount)
 	animation.playback_speed = Global.current_speed * Global.animation_speed
+	timer.wait_time = timer.wait_time / Global.current_speed
 	animation.play("CameraMove")
 	yield(animation,"animation_finished")
 	now_level = Global._next_level()
-	lose_health()
-	yield(animation, "animation_finished")
+	if Global.remaining_health < Global.previous_health:
+		animation.play("Health" + str(Global.previous_health))
+		Global.previous_health = Global.remaining_health
+		yield(animation, "animation_finished")
 	Global.previous_health = Global.remaining_health
 	if Global.remaining_health <= 0:
 		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
@@ -29,12 +32,6 @@ func _ready() -> void:
 		yield(animation, "animation_finished")
 	timer.start()
 
-
-	
-func lose_health() -> void:
-	if Global.remaining_health < Global.previous_health:
-		animation.play("Health" + str(Global.previous_health))
-		Global.previous_health = Global.remaining_health
 
 func change_level():
 	animation.play_backwards("CameraMove")
