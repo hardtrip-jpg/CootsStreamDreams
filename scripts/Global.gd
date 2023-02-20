@@ -5,7 +5,7 @@ var remaining_health := health
 var previous_health := remaining_health
 
 var default_speed := 1.0
-var current_speed := 1.0
+var current_speed := default_speed
 var default_add_speed := .15
 var add_speed := default_add_speed
 
@@ -13,6 +13,7 @@ var add_speed := default_add_speed
 var level_amount := 1
 var speed_level_amount := 1
 
+var animation_speed := .9
 
 var chess_games := [
 	"res://microgames/Chess/DEFChess.tscn"
@@ -50,10 +51,14 @@ func _next_level() -> String:
 	return now_level
 
 func speed_up():
-	Global.current_speed += Global.add_speed
-	Global.speed_level_amount = 0
-	if Global.add_speed <= 0:
-		Global.add_speed = .10
+	current_speed += add_speed
+	speed_level_amount = 0
+	if animation_speed <= 0.1:
+		animation_speed = 0.2
 	else:
-		Global.add_speed -= 0.02
-	print("New Speed: " + str(Global.current_speed))
+		animation_speed -= .05
+	if add_speed <= 0:
+		add_speed = .10
+	else:
+		add_speed -= 0.02
+	print("Speed Up: " + str(current_speed))
