@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/InbetweenScript.gd" type="Script" id=1]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=2]
 [ext_resource path="res://textures/transitionscreen/transitionscreen.png" type="Texture" id=3]
 [ext_resource path="res://textures/transitionscreen/transitionscreenlifes.png" type="Texture" id=4]
+[ext_resource path="res://textures/transitionscreen/SpeedUp/speed_up_big_2005x681.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=6]
 resource_name = "CameraMove"
@@ -323,9 +324,187 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Vector2( 0.745, 0.745 ) ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("AnimatedSprite:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "SpeedUp"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.9, 2.4 ),
+"transitions": PoolRealArray( 0.287175, 3.03143, 3.86374, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0.8, 0.8 ), Vector2( 0.9, 0.9 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2005, 0, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 4010, 0, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 6015, 0, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 8020, 0, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 10025, 0, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 681, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2005, 681, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 4010, 681, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 6015, 681, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 8020, 681, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 10025, 681, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 1362, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2005, 1362, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 4010, 1362, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 6015, 1362, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 8020, 1362, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 10025, 1362, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 2043, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2005, 2043, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 4010, 2043, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 6015, 2043, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 8020, 2043, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 10025, 2043, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 2724, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=92]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2005, 2724, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=93]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 4010, 2724, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=94]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 6015, 2724, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=95]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 8020, 2724, 2005, 681 )
+
+[sub_resource type="AtlasTexture" id=96]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 10025, 2724, 2005, 681 )
+
+[sub_resource type="SpriteFrames" id=67]
+animations = [ {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
 
 [node name="Inbetween" type="Node2D"]
 script = ExtResource( 1 )
@@ -371,3 +550,14 @@ texture = ExtResource( 4 )
 position = Vector2( 729, 416 )
 current = true
 zoom = Vector2( 0.745, 0.745 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 964, 513 )
+scale = Vector2( 1e-05, 1e-05 )
+frames = SubResource( 67 )
+frame = 12
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

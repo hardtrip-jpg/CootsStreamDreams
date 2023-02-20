@@ -10,8 +10,8 @@ var default_add_speed := .15
 var add_speed := default_add_speed
 
 
-var level_amount := 1
-var speed_level_amount := 1
+var level_amount := 0
+var speed_level_amount := 0
 
 var animation_speed := .9
 
