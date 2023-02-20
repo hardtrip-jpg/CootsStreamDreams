@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=1]
+
+[node name="FailScreen" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 902.0
+margin_top = 465.0
+margin_right = 942.0
+margin_bottom = 479.0
+custom_fonts/font = ExtResource( 1 )
+text = "loogere"

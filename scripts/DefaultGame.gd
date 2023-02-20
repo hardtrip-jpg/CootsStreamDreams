@@ -16,6 +16,7 @@ var mouse_over := false
 var is_success := false
 var current_step := 1
 var current_speed := Global.current_speed
+var already_failed := false
 
 func _ready() -> void:
 	for area in area_array:
@@ -56,16 +57,18 @@ func is_over_success() -> void:
 	label.text = "Success"
 	
 func is_over_failure() -> void:
-	disable()
-	label.text = "Failure"
-	Global.remaining_health -= 1
+	if !already_failed:
+		disable()
+		label.text = "Failure"
+		Global.remaining_health -= 1
+		already_failed = true
 	
 func disable() -> void:
 	set_process_input(false)
 	set_process(false)
 	
 func transition_out() -> void:
-	SceneTransition.change_scene("res://uiscenes/TestInbetween.tscn","dissolve")
+	SceneTransition.change_scene("res://uiscenes/Inbetween.tscn","dissolve")
 
 #Timer
 func _on_timer_timeout() -> void:

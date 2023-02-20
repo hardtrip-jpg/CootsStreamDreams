@@ -2,36 +2,37 @@ extends Node
 
 var health := 4
 var remaining_health := health
+var previous_health := remaining_health
 
-var default_speed := 1
-var current_speed := 1
+var default_speed := 1.0
+var current_speed := 1.0
+var default_add_speed := .15
+var add_speed := default_add_speed
+
 
 var level_amount := 1
+var speed_level_amount := 1
+
 
 var chess_games := [
 	"res://microgames/Chess/DEFChess.tscn"
 	]
 
 var treat_games := [
-	"res://microgames/Treat/DEFTreat.tscn"
+	"res://microgames/TestTimingGame.tscn"
 ]
 
 var amongus_games := [
-	"res://microgames/AmongUs/DEFAmongUs.tscn"
+	"res://microgames/TestAmountGame.tscn"
 ]
 
 var all_game_levels := [
 	chess_games,
-	amongus_games,
-	treat_games
+	treat_games,
+	amongus_games
 	]
 	
 var current_game_levels : Array = all_game_levels.duplicate()
-
-var current_array_size : int
-var next_level_key : int
-var current_game : Array
-var pick_level : int
 
 
 func _ready() -> void:
@@ -40,10 +41,19 @@ func _ready() -> void:
 func _next_level() -> String:
 	if current_game_levels.size() <= 0:
 		current_game_levels = all_game_levels.duplicate()
-	current_array_size = current_game_levels.size()
-	next_level_key = randi() % current_array_size
-	current_game = current_game_levels[next_level_key]
-	pick_level = randi() % current_game.size()
+	var current_array_size = current_game_levels.size()
+	var next_level_key = randi() % current_array_size
+	var current_game = current_game_levels[next_level_key]
+	var pick_level = randi() % current_game.size()
 	var now_level : String = current_game[pick_level]
 	current_game_levels.remove(next_level_key)
 	return now_level
+
+func speed_up():
+	Global.current_speed += Global.add_speed
+	Global.speed_level_amount = 0
+	if Global.add_speed <= 0:
+		Global.add_speed = .10
+	else:
+		Global.add_speed -= 0.02
+	print("New Speed: " + str(Global.current_speed))
