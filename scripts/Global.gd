@@ -28,9 +28,7 @@ var amongus_games := [
 ]
 
 var all_game_levels := [
-	chess_games,
-	treat_games,
-	amongus_games
+	chess_games
 	]
 	
 var current_game_levels : Array = all_game_levels.duplicate()

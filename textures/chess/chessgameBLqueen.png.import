@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ChessBG.png-a77fb81ace708acab71f6c4f83b301c8.stex"
+path="res://.import/chessgameBLqueen.png-648486ff29cdec6b00dd0fd69bdfbc97.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/chess/ChessBG.png"
-dest_files=[ "res://.import/ChessBG.png-a77fb81ace708acab71f6c4f83b301c8.stex" ]
+source_file="res://textures/chess/chessgameBLqueen.png"
+dest_files=[ "res://.import/chessgameBLqueen.png-648486ff29cdec6b00dd0fd69bdfbc97.stex" ]
 
 [params]
 

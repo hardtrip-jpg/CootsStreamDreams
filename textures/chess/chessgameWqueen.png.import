@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/luddyroom.png-515b7544759e72211d0bc9f9b1c0f2bf.stex"
+path="res://.import/chessgameWqueen.png-390ab07ac587746588059d892e5d0ef8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wellvos cumdump/luddygame/luddyroom.png"
-dest_files=[ "res://.import/luddyroom.png-515b7544759e72211d0bc9f9b1c0f2bf.stex" ]
+source_file="res://textures/chess/chessgameWqueen.png"
+dest_files=[ "res://.import/chessgameWqueen.png-390ab07ac587746588059d892e5d0ef8.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

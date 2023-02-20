@@ -1,7 +1,6 @@
 extends Node2D
 
 onready var timer := $Timer
-onready var label := $Label
 onready var animation_steps := $AnimationPlayer
 onready var animation_timer := $AnimationTimer
 onready var label_game_text := $GameText
@@ -28,16 +27,16 @@ func _ready() -> void:
 	timer.wait_time = timer_time / current_speed
 	label_game_text.text = game_text
 	animation_steps.playback_speed = current_speed
+	animation_timer.playback_speed = current_speed
 	animation_steps.play("step" + str(current_step))
+	animation_timer.play("text")
+	yield(animation_timer,"animation_finished")
+	animation_timer.play("timer")
 	timer.start()
 	
 
-#Set Timer Label
-func get_time_as_text(time: float) -> String:
-	return str(time).pad_decimals(2).pad_zeros(1)
 
 func _process(delta: float) -> void:
-	label.text = get_time_as_text(timer.time_left)
 	if current_step >= step_amounts:
 		is_over_success()
 	
@@ -54,14 +53,14 @@ func _on_mouse_exited() -> void:
 func is_over_success() -> void:
 	is_success = true
 	disable()
-	label.text = "Success"
+	animation_steps.play("success")
 	
 func is_over_failure() -> void:
 	if !already_failed:
 		disable()
-		label.text = "Failure"
 		Global.remaining_health -= 1
 		already_failed = true
+		animation_steps.play("failed")
 	
 func disable() -> void:
 	set_process_input(false)
