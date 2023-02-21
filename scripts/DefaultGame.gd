@@ -4,6 +4,7 @@ onready var timer := $Timer
 onready var animation_steps := $AnimationPlayer
 onready var animation_timer := $AnimationTimer
 onready var label_game_text := $GameText
+onready var sfx := $SFX
 
 export var timer_time := 3.0
 export var area_array : Array = []
@@ -53,6 +54,7 @@ func is_over_success() -> void:
 	is_success = true
 	disable()
 	Global.previous_success = true
+	sfx.success()
 	animation_steps.play("success")
 	yield(animation_steps, "animation_finished")
 	transition_out()
@@ -63,6 +65,7 @@ func is_over_failure() -> void:
 		Global.remaining_health -= 1
 		already_failed = true
 		Global.previous_success = false
+		sfx.fail()
 		animation_steps.play("failed")
 		yield(animation_steps, "animation_finished")
 		transition_out()
