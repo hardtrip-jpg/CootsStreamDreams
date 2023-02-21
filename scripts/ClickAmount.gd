@@ -7,7 +7,6 @@ export var click_amount : int
 var current_amount : int = 0
 
 func _process(delta: float) -> void:
-	label.text = get_time_as_text(timer.time_left)
 	amount_text.text = get_amount_as_text(click_amount - current_amount)
 	if current_step >= step_amounts:
 		is_over_success()

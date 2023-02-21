@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/b_king_png_128px.png-73249810fd17b58acd5c72a82bc8a704.stex"
+path="res://.import/chessgameboard.png-ac46c938a6872ed32c3898e28921df21.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/chess/b_king_png_128px.png"
-dest_files=[ "res://.import/b_king_png_128px.png-73249810fd17b58acd5c72a82bc8a704.stex" ]
+source_file="res://textures/chess/chessgameboard.png"
+dest_files=[ "res://.import/chessgameboard.png-ac46c938a6872ed32c3898e28921df21.stex" ]
 
 [params]
 
