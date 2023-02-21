@@ -1,8 +1,8 @@
 extends Node
 
 var health := 4
-var remaining_health := health
-var previous_health := remaining_health
+var remaining_health := 4
+var previous_health := 4
 
 var default_speed := 1.0
 var current_speed := default_speed

@@ -611,7 +611,7 @@ script = ExtResource( 1 )
 timer_time = 5.0
 area_array = [ NodePath("Step1"), NodePath("Step2") ]
 step_amounts = 3
-game_text = "\"Win the match\""
+game_text = "Win the match"
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 960, 539 )
@@ -688,6 +688,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
+frame = 4
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -710,10 +711,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 35.0
-margin_top = 58.0
-margin_right = 496.0
-margin_bottom = 123.0
+margin_left = 31.0
+margin_top = 32.0
+margin_right = 492.0
+margin_bottom = 100.0
 rect_scale = Vector2( 1e-05, 1e-05 )
 custom_fonts/font = ExtResource( 8 )
 text = "Win the Match"
