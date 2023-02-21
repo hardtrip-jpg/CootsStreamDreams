@@ -17,6 +17,7 @@ config/icon="res://textures/cootsheadblender.png"
 
 Global="*res://scripts/Global.gd"
 SceneTransition="*res://uiscenes/SceneTransition.tscn"
+BgMusicTest="*res://uiscenes/BGMusicTest.tscn"
 
 [display]
 

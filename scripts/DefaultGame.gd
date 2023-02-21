@@ -10,7 +10,6 @@ export var area_array : Array = []
 export var step_amounts := 1
 export var game_text : String
 
-
 var mouse_over := false
 var is_success := false
 var current_step := 1
@@ -53,14 +52,20 @@ func _on_mouse_exited() -> void:
 func is_over_success() -> void:
 	is_success = true
 	disable()
+	Global.previous_success = true
 	animation_steps.play("success")
+	yield(animation_steps, "animation_finished")
+	transition_out()
 	
 func is_over_failure() -> void:
 	if !already_failed:
 		disable()
 		Global.remaining_health -= 1
 		already_failed = true
+		Global.previous_success = false
 		animation_steps.play("failed")
+		yield(animation_steps, "animation_finished")
+		transition_out()
 	
 func disable() -> void:
 	set_process_input(false)
@@ -73,4 +78,4 @@ func transition_out() -> void:
 func _on_timer_timeout() -> void:
 	if !is_success:
 		is_over_failure()
-	transition_out()
+

@@ -9,6 +9,7 @@ var current_speed := default_speed
 var default_add_speed := .15
 var add_speed := default_add_speed
 
+var previous_success := true
 
 var level_amount := 0
 var speed_level_amount := 0

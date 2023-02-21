@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/We Shop Song.ogg-3cf69f6d58f1492d4e8b6f8972e46f54.oggstr"
+
+[deps]
+
+source_file="res://sound/We Shop Song.ogg"
+dest_files=[ "res://.import/We Shop Song.ogg-3cf69f6d58f1492d4e8b6f8972e46f54.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

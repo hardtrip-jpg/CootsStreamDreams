@@ -124,12 +124,11 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=23]
 resource_name = "failed"
-length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("EndScreen:texture")
 tracks/0/interp = 1
@@ -293,7 +292,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=24]
 resource_name = "success"
-length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("EndScreen:texture")
 tracks/0/interp = 1
@@ -593,6 +591,20 @@ tracks/11/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/12/type = "method"
+tracks/12/path = NodePath("Yarn/YarnEnd1")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
 
 [node name="DEFChessGame" type="Node2D"]
 script = ExtResource( 1 )
@@ -639,6 +651,8 @@ shape = SubResource( 1 )
 
 [node name="EndScreen" type="Sprite" parent="."]
 position = Vector2( 959, 542 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 12 )
 
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -674,7 +688,6 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 3
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

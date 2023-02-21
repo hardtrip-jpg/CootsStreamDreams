@@ -3,6 +3,7 @@ extends Node2D
 onready var health_label := $Health
 onready var current_label := $Current
 onready var animation := $AnimationPlayer
+onready var animation_coots := $AnimationCoots
 onready var timer := $Timer
 
 var next_level_text
@@ -13,6 +14,11 @@ func _ready() -> void:
 	Global.level_amount += 1
 	Global.speed_level_amount += 1
 	current_label.text = str(Global.level_amount).pad_decimals(0).pad_zeros(3)
+	animation_coots.playback_speed = Global.current_speed * Global.animation_speed
+	if Global.previous_success:
+		animation_coots.play("success")
+	else:
+		animation_coots.play("failed")
 	set_health()
 	animation.playback_speed = Global.current_speed * Global.animation_speed
 	timer.wait_time = timer.wait_time / Global.current_speed

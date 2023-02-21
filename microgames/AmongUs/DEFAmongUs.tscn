@@ -1,21 +1,65 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
-[ext_resource path="res://textures/amongus/amongusgamebackground.png" type="Texture" id=2]
-[ext_resource path="res://fonts/Baskic8-Bold.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://textures/amongus/amongusgame.png" type="Texture" id=4]
+[ext_resource path="res://textures/chess/chessgameloss.png" type="Texture" id=7]
+[ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=8]
+[ext_resource path="res://textures/yarnball/yarnball.png" type="Texture" id=9]
+[ext_resource path="res://textures/yarnball/yarnstringend.png" type="Texture" id=10]
+[ext_resource path="res://textures/yarnball/yarnstring.png" type="Texture" id=11]
+[ext_resource path="res://textures/chess/chessgamewin.png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 302, 136 )
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 256, 256 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 100
-font_data = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 256, 0, 256, 256 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 512, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 768, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 256, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 256, 256, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 512, 256, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 768, 256, 256, 256 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=19]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/path = NodePath("EndScreen:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -23,11 +67,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
+"update": 1,
+"values": [ null ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Step2:monitoring")
+tracks/1/path = NodePath("EndScreen:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -36,38 +80,44 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Step3:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Step4:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
+"values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=23]
+resource_name = "failed"
+tracks/0/type = "value"
+tracks/0/path = NodePath("EndScreen:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EndScreen:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.196146, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=20]
 resource_name = "step1"
-length = 0.1
+length = 0.001
+
+[sub_resource type="Animation" id=24]
+resource_name = "success"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/path = NodePath("EndScreen:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -76,49 +126,25 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Step2:monitoring")
+tracks/1/path = NodePath("EndScreen:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Step3:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Step4:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.196146, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "step2"
+[sub_resource type="Animation" id=17]
+length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/path = NodePath("Yarn/YarnEnd6:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -126,11 +152,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Step2:monitoring")
+tracks/1/path = NodePath("Yarn/YarnEnd5:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -138,11 +164,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ ExtResource( 11 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Step3:monitoring")
+tracks/2/path = NodePath("Yarn/YarnEnd4:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -150,11 +176,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ ExtResource( 11 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Step4:monitoring")
+tracks/3/path = NodePath("Yarn/YarnEnd3:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -162,71 +188,319 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Yarn/YarnEnd2:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Yarn/YarnEnd1:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("GameText:rect_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("GameText:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
-[node name="DEFAmongUs" type="Node2D"]
+[sub_resource type="Animation" id=18]
+resource_name = "text"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameText:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.7 ),
+"transitions": PoolRealArray( 0.164938, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.8, 1.8 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "timer"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Yarn/YarnEnd6:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Yarn/YarnEnd5:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Yarn/YarnEnd4:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Yarn/YarnEnd3:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Yarn/YarnEnd2:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Yarn/YarnEnd1:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 4.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Yarn/YarnEnd7")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Yarn/YarnEnd6")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Yarn/YarnEnd5")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 2.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("Yarn/YarnEnd4")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 2.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Yarn/YarnEnd3")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 3.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("Yarn/YarnEnd2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 4.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath("Yarn/YarnEnd1")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="DEFChessGame" type="Node2D"]
 script = ExtResource( 1 )
-area_array = [ NodePath("Step1"), NodePath("Step2"), NodePath("Step3"), NodePath("Step4"), NodePath("Step5") ]
-step_amounts = 2
+timer_time = 5.0
+area_array = [ NodePath(""), NodePath("") ]
+step_amounts = 3
+game_text = "\"Win the match\""
 
-[node name="Space" type="Sprite" parent="."]
-position = Vector2( 959, 543 )
-texture = ExtResource( 2 )
+[node name="EndScreen" type="Sprite" parent="."]
+position = Vector2( 959, 542 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 7 )
 
-[node name="BG" type="Sprite" parent="."]
-position = Vector2( 954.711, 545 )
-texture = ExtResource( 4 )
+[node name="Yarn" type="Node2D" parent="."]
+position = Vector2( -50, 0 )
 
-[node name="Step1" type="Area2D" parent="."]
-position = Vector2( 590, 842 )
+[node name="YarnEnd1" type="Sprite" parent="Yarn"]
+position = Vector2( 297, 980 )
+texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
-shape = SubResource( 1 )
+[node name="YarnEnd2" type="Sprite" parent="Yarn"]
+position = Vector2( 552, 980 )
+texture = ExtResource( 11 )
 
-[node name="Step2" type="Area2D" parent="."]
-position = Vector2( 591, 547 )
+[node name="YarnEnd3" type="Sprite" parent="Yarn"]
+position = Vector2( 807, 980 )
+texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Step2"]
-shape = SubResource( 1 )
+[node name="YarnEnd4" type="Sprite" parent="Yarn"]
+position = Vector2( 1062, 980 )
+texture = ExtResource( 11 )
 
-[node name="Step3" type="Area2D" parent="."]
-position = Vector2( 1227, 546 )
+[node name="YarnEnd5" type="Sprite" parent="Yarn"]
+position = Vector2( 1317, 980 )
+texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Step3"]
-shape = SubResource( 1 )
+[node name="YarnEnd6" type="Sprite" parent="Yarn"]
+position = Vector2( 1570, 980 )
+texture = ExtResource( 11 )
 
-[node name="Step4" type="Area2D" parent="."]
-position = Vector2( 1227, 843 )
+[node name="YarnEnd7" type="Sprite" parent="Yarn"]
+position = Vector2( 1826, 980 )
+texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Step4"]
-shape = SubResource( 1 )
-
-[node name="Step5" type="Area2D" parent="."]
-position = Vector2( 1227, 249 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Step5"]
-shape = SubResource( 1 )
-
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 811.0
-margin_top = 546.0
-margin_right = 1037.0
-margin_bottom = 655.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 2 )
+[node name="YarnBall" type="AnimatedSprite" parent="."]
+position = Vector2( 133, 945 )
+frames = SubResource( 16 )
+frame = 3
+playing = true
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "step1"
-anims/RESET = SubResource( 3 )
-anims/step1 = SubResource( 4 )
-anims/step2 = SubResource( 5 )
+anims/RESET = SubResource( 19 )
+anims/failed = SubResource( 23 )
+anims/step1 = SubResource( 20 )
+anims/success = SubResource( 24 )
 
 [node name="AnimationTimer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 17 )
+anims/text = SubResource( 18 )
+anims/timer = SubResource( 7 )
+
+[node name="GameText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 35.0
+margin_top = 58.0
+margin_right = 496.0
+margin_bottom = 123.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+custom_fonts/font = ExtResource( 8 )
+text = "Win the Match"
