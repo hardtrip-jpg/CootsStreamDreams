@@ -32,11 +32,12 @@ func _ready() -> void:
 	Global.previous_health = Global.remaining_health
 	if Global.remaining_health <= 0:
 		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
+	timer.start()
 	if Global.speed_level_amount > 4:
 		Global.speed_up()
 		animation.play("SpeedUp")
 		yield(animation, "animation_finished")
-	timer.start()
+
 
 
 func change_level():
