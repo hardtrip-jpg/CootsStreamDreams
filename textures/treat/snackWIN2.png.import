@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/buttonsucess.jpg-61a02dbf9a529e98b7fc3d84367052fa.stex"
+path="res://.import/snackWIN2.png-5d35424a4d0366e69e23cbc3bde386f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/button/buttonsucess.jpg"
-dest_files=[ "res://.import/buttonsucess.jpg-61a02dbf9a529e98b7fc3d84367052fa.stex" ]
+source_file="res://textures/treat/snackWIN2.png"
+dest_files=[ "res://.import/snackWIN2.png-5d35424a4d0366e69e23cbc3bde386f0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

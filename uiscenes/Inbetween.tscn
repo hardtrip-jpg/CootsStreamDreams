@@ -707,6 +707,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0.8, 0.8 ), Vector2( 0.9, 0.9 ), Vector2( 0, 0 ) ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("Timer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
 
 [sub_resource type="Animation" id=130]
 length = 0.001
@@ -885,7 +899,7 @@ text = "999"
 position = Vector2( 415, 269 )
 scale = Vector2( 1e-05, 1e-05 )
 frames = SubResource( 67 )
-frame = 26
+frame = 32
 playing = true
 
 [node name="BG" type="Sprite" parent="."]

@@ -19,17 +19,20 @@ var animation_speed := .9
 var chess_games := [
 	"res://microgames/Chess/DEFChess.tscn"
 	]
-
-var treat_games := [
-	"res://microgames/TestTimingGame.tscn"
+var button_games := [
+	"res://microgames/Button/DEFButton.tscn"
 ]
-
 var amongus_games := [
-	"res://microgames/TestAmountGame.tscn"
+	"res://microgames/AmongUs/DEFAmongUs.tscn"
 ]
-
+var treat_games :=[
+	"res://microgames/Treat/DEFTreat.tscn"
+]
 var all_game_levels := [
-	chess_games
+	chess_games,
+	button_games,
+	amongus_games,
+	treat_games
 	]
 	
 var current_game_levels : Array = all_game_levels.duplicate()

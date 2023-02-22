@@ -29,3 +29,13 @@ func _toggle_timing() -> void:
 		is_timing = true
 	else:
 		is_timing = false
+
+func is_over_success() -> void:
+	ontime.stop()
+	is_success = true
+	disable()
+	Global.previous_success = true
+	sfx.success()
+	animation_steps.play("success")
+	yield(animation_steps, "animation_finished")
+	transition_out()

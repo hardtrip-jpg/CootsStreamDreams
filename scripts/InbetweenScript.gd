@@ -11,33 +11,44 @@ var now_level : String
 
 func _ready() -> void:
 	timer.connect("timeout", self, "timeout")
+	#Set Level Amount
 	Global.level_amount += 1
 	Global.speed_level_amount += 1
 	current_label.text = str(Global.level_amount).pad_decimals(0).pad_zeros(3)
+	
+	#Determine Success
 	animation_coots.playback_speed = Global.current_speed * Global.animation_speed
 	if Global.previous_success:
 		animation_coots.play("success")
 	else:
 		animation_coots.play("failed")
+		
+	#Set Health
 	set_health()
+	
+	#Set Animation Speed and Move Camera
 	animation.playback_speed = Global.current_speed * Global.animation_speed
-	timer.wait_time = timer.wait_time / Global.current_speed
+	timer.wait_time = timer.wait_time / Global.current_speed + 0.3
 	animation.play("CameraMove")
 	yield(animation,"animation_finished")
+	
 	now_level = Global._next_level()
+	
 	if Global.remaining_health < Global.previous_health:
 		animation.play("Health" + str(Global.previous_health))
 		Global.previous_health = Global.remaining_health
 		yield(animation, "animation_finished")
+	
 	Global.previous_health = Global.remaining_health
 	if Global.remaining_health <= 0:
 		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
-	timer.start()
+	
 	if Global.speed_level_amount > 4:
 		Global.speed_up()
 		animation.play("SpeedUp")
 		yield(animation, "animation_finished")
-
+	else:
+		timer.start()
 
 
 func change_level():

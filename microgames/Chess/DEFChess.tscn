@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
 [ext_resource path="res://textures/chess/chessgameboard.png" type="Texture" id=2]
@@ -14,7 +14,10 @@
 [ext_resource path="res://textures/chess/chessgamewin.png" type="Texture" id=12]
 [ext_resource path="res://scripts/SFX.gd" type="Script" id=13]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 70, 70 )
+
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 70, 70 )
 
 [sub_resource type="AtlasTexture" id=8]
@@ -151,6 +154,30 @@ tracks/6/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Step2/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Step1/CollisionShape2D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "failed"
@@ -183,71 +210,47 @@ tracks/1/keys = {
 resource_name = "step1"
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/path = NodePath("MainMove:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Step2:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("MainMove:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 778, 716 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Step2:monitorable")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Step1:monitorable")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("Step2/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Step1/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=21]
 resource_name = "step2"
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/type = "method"
+tracks/0/path = NodePath("MainMove")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -255,11 +258,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ {
+"args": [  ],
+"method": "toggle_grab"
+} ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Step2:monitoring")
+tracks/1/path = NodePath("Step1/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -270,8 +275,8 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("MainMove")
+tracks/2/type = "value"
+tracks/2/path = NodePath("Step2/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -279,41 +284,15 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "toggle_grab"
-} ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Step1:monitorable")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Step2:monitorable")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
 }
 
 [sub_resource type="Animation" id=22]
 resource_name = "step3"
 length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/type = "method"
+tracks/0/path = NodePath("MainMove")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -321,23 +300,25 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ {
+"args": [  ],
+"method": "toggle_grab"
+} ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Step2:monitoring")
+tracks/1/path = NodePath("MainMove:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Vector2( 1256, 231 ) ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("MainMove")
+tracks/2/type = "value"
+tracks/2/path = NodePath("Step1/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -345,46 +326,20 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "toggle_grab"
-} ]
+"update": 1,
+"values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("MainMove:position")
+tracks/3/path = NodePath("Step2/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1256, 231 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Step2:monitorable")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Step1:monitorable")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -736,7 +691,7 @@ position = Vector2( 775, 720 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
 position = Vector2( 2, -3 )
-shape = SubResource( 1 )
+shape = SubResource( 25 )
 
 [node name="Step2" type="Area2D" parent="."]
 position = Vector2( 1254, 234 )
@@ -745,7 +700,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step2"]
 position = Vector2( 2, -3 )
-shape = SubResource( 1 )
+shape = SubResource( 26 )
 
 [node name="EndScreen" type="Sprite" parent="."]
 position = Vector2( 959, 542 )
@@ -786,7 +741,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

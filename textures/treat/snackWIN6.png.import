@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/snackWIN6.png-4917cf0dbadb317bf8c15b4139d9bc93.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://textures/treat/snackWIN6.png"
+dest_files=[ "res://.import/snackWIN6.png-4917cf0dbadb317bf8c15b4139d9bc93.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
