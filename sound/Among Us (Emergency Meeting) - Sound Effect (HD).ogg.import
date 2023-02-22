@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Among Us (Emergency Meeting) - Sound Effect (HD).ogg-da453bc4835db87204079c3c44df390b.oggstr"
+
+[deps]
+
+source_file="res://sound/Among Us (Emergency Meeting) - Sound Effect (HD).ogg"
+dest_files=[ "res://.import/Among Us (Emergency Meeting) - Sound Effect (HD).ogg-da453bc4835db87204079c3c44df390b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

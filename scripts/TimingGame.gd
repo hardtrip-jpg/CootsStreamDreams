@@ -26,6 +26,7 @@ func _input(event: InputEvent) -> void:
 
 func _toggle_timing() -> void:
 	if not is_timing:
+		sfx.interact()
 		is_timing = true
 	else:
 		is_timing = false

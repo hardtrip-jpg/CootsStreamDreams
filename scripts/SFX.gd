@@ -1,8 +1,13 @@
 extends AudioStreamPlayer
 
+export var start : Resource
 export var success : Resource = preload ("res://sound/496087__dastudiospr__male-yeah.wav")
 export var fail : Resource = preload ("res://sound/Roblox Angry Sound Effect.ogg")
 export var interact : Resource = preload("res://sound/switch24.wav")
+
+func start() -> void:
+	stream = start
+	play()
 
 func success() -> void:
 	stream = success

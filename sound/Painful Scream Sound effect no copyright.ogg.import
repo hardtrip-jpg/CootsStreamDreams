@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Painful Scream Sound effect no copyright.ogg-efd66bfb3a01204f83c328ea21c5f9b7.oggstr"
+
+[deps]
+
+source_file="res://sound/Painful Scream Sound effect no copyright.ogg"
+dest_files=[ "res://.import/Painful Scream Sound effect no copyright.ogg-efd66bfb3a01204f83c328ea21c5f9b7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

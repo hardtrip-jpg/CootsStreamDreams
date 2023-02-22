@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/TimingGame.gd" type="Script" id=1]
 [ext_resource path="res://textures/button/luddybuttonSTART.png" type="Texture" id=2]
 [ext_resource path="res://textures/button/luddybuttonRED.png" type="Texture" id=3]
 [ext_resource path="res://textures/button/luddybuttonLOSE.png" type="Texture" id=4]
 [ext_resource path="res://textures/button/luddybuttonWIN.png" type="Texture" id=5]
+[ext_resource path="res://sound/Among Us (Emergency Meeting) - Sound Effect (HD).ogg" type="AudioStream" id=6]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=8]
 [ext_resource path="res://textures/yarnball/yarnball.png" type="Texture" id=9]
 [ext_resource path="res://textures/yarnball/yarnstringend.png" type="Texture" id=10]
@@ -659,6 +660,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
+frame = 7
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -692,6 +694,7 @@ text = "Win the Match"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
 script = ExtResource( 13 )
+interact = ExtResource( 6 )
 
 [node name="OnTime" type="AnimationPlayer" parent="."]
 autoplay = "timing"

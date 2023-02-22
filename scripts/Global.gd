@@ -20,13 +20,18 @@ var chess_games := [
 	"res://microgames/Chess/DEFChess.tscn"
 	]
 var button_games := [
-	"res://microgames/Button/DEFButton.tscn"
+	"res://microgames/Button/DEFButton.tscn",
+	"res://microgames/Button/Button2.tscn",
+	"res://microgames/Button/Button3.tscn"
 ]
 var amongus_games := [
 	"res://microgames/AmongUs/DEFAmongUs.tscn"
 ]
 var treat_games :=[
-	"res://microgames/Treat/DEFTreat.tscn"
+	"res://microgames/Treat/DEFTreat.tscn",
+	"res://microgames/Treat/Treat2.tscn",
+	"res://microgames/Treat/Treat3.tscn",
+	"res://microgames/Treat/Treat4.tscn"
 ]
 var all_game_levels := [
 	chess_games,

@@ -18,6 +18,7 @@ var current_speed := Global.current_speed
 var already_failed := false
 
 func _ready() -> void:
+	sfx.start()
 	for area in area_array:
 		if area:
 			var current_area = get_node(area)

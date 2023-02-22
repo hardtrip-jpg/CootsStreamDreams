@@ -44,7 +44,7 @@ func _ready() -> void:
 	if Global.remaining_health <= 0:
 		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
 	
-	if Global.speed_level_amount > 1:
+	if Global.speed_level_amount > 4:
 		Global.speed_up()
 		BgMusicTest.speed_up()
 		animation.play("SpeedUp")
