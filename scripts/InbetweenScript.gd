@@ -10,6 +10,7 @@ var next_level_text
 var now_level : String
 
 func _ready() -> void:
+	BgMusicTest.bg_music()
 	timer.connect("timeout", self, "timeout")
 	#Set Level Amount
 	Global.level_amount += 1
@@ -17,7 +18,7 @@ func _ready() -> void:
 	current_label.text = str(Global.level_amount).pad_decimals(0).pad_zeros(3)
 	
 	#Determine Success
-	animation_coots.playback_speed = Global.current_speed * Global.animation_speed
+	animation_coots.playback_speed = Global.current_speed
 	if Global.previous_success:
 		animation_coots.play("success")
 	else:
@@ -27,7 +28,7 @@ func _ready() -> void:
 	set_health()
 	
 	#Set Animation Speed and Move Camera
-	animation.playback_speed = Global.current_speed * Global.animation_speed
+	animation.playback_speed = Global.current_speed
 	timer.wait_time = timer.wait_time / Global.current_speed + 0.3
 	animation.play("CameraMove")
 	yield(animation,"animation_finished")
@@ -43,12 +44,14 @@ func _ready() -> void:
 	if Global.remaining_health <= 0:
 		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
 	
-	if Global.speed_level_amount > 4:
+	if Global.speed_level_amount > 1:
 		Global.speed_up()
+		BgMusicTest.speed_up()
 		animation.play("SpeedUp")
 		yield(animation, "animation_finished")
 	else:
 		timer.start()
+	BgMusicTest.bg_music()
 
 
 func change_level():
@@ -65,4 +68,3 @@ func set_health() -> void:
 		
 func timeout():
 	change_level()
-

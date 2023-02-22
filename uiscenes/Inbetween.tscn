@@ -885,6 +885,7 @@ position = Vector2( 729, 416 )
 scale = Vector2( 0.751278, 0.751278 )
 frames = SubResource( 127 )
 animation = "normal"
+frame = 1
 playing = true
 
 [node name="Current" type="Label" parent="."]
@@ -899,7 +900,7 @@ text = "999"
 position = Vector2( 415, 269 )
 scale = Vector2( 1e-05, 1e-05 )
 frames = SubResource( 67 )
-frame = 32
+frame = 48
 playing = true
 
 [node name="BG" type="Sprite" parent="."]

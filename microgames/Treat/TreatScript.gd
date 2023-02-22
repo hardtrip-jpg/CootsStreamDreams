@@ -2,6 +2,8 @@ extends Sprite
 
 export var area_2d : NodePath
 
+signal no_longer_over
+
 var mouse_over = false
 
 func _ready() -> void:
@@ -17,4 +19,6 @@ func mouse_exited() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and mouse_over:
+		yield(get_tree().create_timer(0.1), "timeout")
+		emit_signal("no_longer_over")
 		queue_free()

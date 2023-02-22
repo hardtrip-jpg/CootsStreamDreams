@@ -129,6 +129,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=23]
 resource_name = "failed"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("EndScreen:texture")
 tracks/0/interp = 1
@@ -175,10 +176,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"times": PoolRealArray( 0, 0.6, 0.7, 0.8, 0.9, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ) ]
+"values": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("EndScreen:scale")
@@ -487,7 +488,7 @@ script = ExtResource( 1 )
 timer_time = 4.0
 area_array = [ NodePath("Treat1/Step1"), NodePath("Treat2/Step2"), NodePath("Treat3/Step3") ]
 step_amounts = 4
-game_text = "Vote Green out"
+game_text = "Find the Treats"
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 960, 539 )
@@ -535,7 +536,7 @@ shape = SubResource( 27 )
 [node name="EndScreen" type="Sprite" parent="."]
 position = Vector2( 959, 542 )
 scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 3 )
+texture = ExtResource( 7 )
 
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -571,7 +572,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -605,3 +606,7 @@ text = "Win the Match"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
 script = ExtResource( 13 )
+
+[connection signal="no_longer_over" from="Treat1" to="." method="no_longer_mouse_over"]
+[connection signal="no_longer_over" from="Treat2" to="." method="no_longer_mouse_over"]
+[connection signal="no_longer_over" from="Treat3" to="." method="no_longer_mouse_over"]

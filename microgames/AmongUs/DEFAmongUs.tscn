@@ -1,13 +1,14 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
 [ext_resource path="res://textures/amongus/amongusgame.png" type="Texture" id=2]
-[ext_resource path="res://textures/chess/chessgameloss.png" type="Texture" id=7]
+[ext_resource path="res://textures/amongus/amongusgameGREEN.png" type="Texture" id=3]
+[ext_resource path="res://textures/amongus/amongusgamebackground.png" type="Texture" id=4]
+[ext_resource path="res://textures/cootsheadblender.png" type="Texture" id=5]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=8]
 [ext_resource path="res://textures/yarnball/yarnball.png" type="Texture" id=9]
 [ext_resource path="res://textures/yarnball/yarnstringend.png" type="Texture" id=10]
 [ext_resource path="res://textures/yarnball/yarnstring.png" type="Texture" id=11]
-[ext_resource path="res://textures/chess/chessgamewin.png" type="Texture" id=12]
 [ext_resource path="res://scripts/SFX.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -111,8 +112,56 @@ tracks/3/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("EndScreen/Head:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ null ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndScreen/Head:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EndScreen/Head:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EndScreen/Head:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=25]
 resource_name = "failed"
 tracks/0/type = "value"
 tracks/0/path = NodePath("EndScreen:texture")
@@ -124,7 +173,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("EndScreen:scale")
@@ -133,10 +182,58 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 0.196146, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EndScreen/Head:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EndScreen/Head:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -322, -8 ), Vector2( 334, -8 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EndScreen/Head:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 122.229, 231.323 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndScreen/Head:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.183957, 0.183957 ) ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -235,7 +332,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("EndScreen:scale")
@@ -244,10 +341,58 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 0.196146, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EndScreen/Head:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EndScreen/Head:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -322, -8 ), Vector2( 334, -8 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EndScreen/Head:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 122.229, 231.323 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndScreen/Head:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -560,7 +705,9 @@ shape = SubResource( 1 )
 [node name="EndScreen" type="Sprite" parent="."]
 position = Vector2( 959, 542 )
 scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 12 )
+texture = ExtResource( 4 )
+
+[node name="Head" type="Sprite" parent="EndScreen"]
 
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -596,14 +743,14 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 19 )
-anims/failed = SubResource( 23 )
+anims/failed = SubResource( 25 )
 anims/step1 = SubResource( 20 )
 anims/step2 = SubResource( 21 )
 anims/step3 = SubResource( 22 )

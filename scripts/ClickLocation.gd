@@ -10,3 +10,6 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("click"):
 		sfx.interact()
 		is_over_failure()
+
+func no_longer_mouse_over() -> void:
+	mouse_over = false
