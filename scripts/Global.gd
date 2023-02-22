@@ -25,7 +25,12 @@ var button_games := [
 	"res://microgames/Button/Button3.tscn"
 ]
 var amongus_games := [
-	"res://microgames/AmongUs/DEFAmongUs.tscn"
+	"res://microgames/AmongUs/DEFAmongUs.tscn",
+	"res://microgames/AmongUs/AmongUsBlack.tscn",
+	"res://microgames/AmongUs/AmongUsBlue.tscn",
+	"res://microgames/AmongUs/AmongUsPink.tscn",
+	"res://microgames/AmongUs/AmongUsRed.tscn",
+	"res://microgames/AmongUs/AmongUsYellow.tscn"
 ]
 var treat_games :=[
 	"res://microgames/Treat/DEFTreat.tscn",

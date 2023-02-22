@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
 [ext_resource path="res://textures/amongus/amongusgame.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://textures/yarnball/yarnball.png" type="Texture" id=9]
 [ext_resource path="res://textures/yarnball/yarnstringend.png" type="Texture" id=10]
 [ext_resource path="res://textures/yarnball/yarnstring.png" type="Texture" id=11]
+[ext_resource path="res://textures/amongus/amongusgamePINK.png" type="Texture" id=12]
 [ext_resource path="res://scripts/SFX.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -358,7 +359,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("EndScreen/Head:position")
@@ -691,14 +692,14 @@ script = ExtResource( 1 )
 timer_time = 4.0
 area_array = [ NodePath("Step1") ]
 step_amounts = 2
-game_text = "Vote Green out"
+game_text = "Vote Pink out"
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 960, 539 )
 texture = ExtResource( 2 )
 
 [node name="Step1" type="Area2D" parent="."]
-position = Vector2( 1215, 542 )
+position = Vector2( 578, 542 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
 position = Vector2( 17, -1.5 )
