@@ -670,12 +670,6 @@ position = Vector2( 960, 539 )
 texture = ExtResource( 2 )
 flip_h = true
 
-[node name="MainMove" type="Sprite" parent="."]
-position = Vector2( 778, 716 )
-scale = Vector2( 1.3, 1.3 )
-texture = ExtResource( 6 )
-script = ExtResource( 5 )
-
 [node name="KingWhite" type="Sprite" parent="."]
 position = Vector2( 1385, 355 )
 scale = Vector2( 1.3, 1.3 )
@@ -685,6 +679,12 @@ texture = ExtResource( 4 )
 position = Vector2( 1255, 108 )
 scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 3 )
+
+[node name="MainMove" type="Sprite" parent="."]
+position = Vector2( 778, 716 )
+scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="Step1" type="Area2D" parent="."]
 position = Vector2( 775, 720 )
@@ -741,7 +741,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 6
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

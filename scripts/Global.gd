@@ -17,7 +17,9 @@ var speed_level_amount := 0
 var animation_speed := .9
 
 var chess_games := [
-	"res://microgames/Chess/DEFChess.tscn"
+	"res://microgames/Chess/DEFChess.tscn",
+	"res://microgames/Chess/Chess2.tscn",
+	"res://microgames/Chess/Chess3.tscn"
 	]
 var button_games := [
 	"res://microgames/Button/DEFButton.tscn",
