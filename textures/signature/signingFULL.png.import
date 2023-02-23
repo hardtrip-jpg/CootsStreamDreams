@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/signingFULL.png-815c37d7ff6845976b772ca8a20afb97.stex"
+path="res://.import/signingFULL.png-591e418a082a902302e67f8694c4a7ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wellvos cumdump/signinggame/signingFULL.png"
-dest_files=[ "res://.import/signingFULL.png-815c37d7ff6845976b772ca8a20afb97.stex" ]
+source_file="res://textures/signature/signingFULL.png"
+dest_files=[ "res://.import/signingFULL.png-591e418a082a902302e67f8694c4a7ff.stex" ]
 
 [params]
 

@@ -694,7 +694,7 @@ scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 3 )
 
 [node name="RookBlack" type="Sprite" parent="."]
-position = Vector2( 782, 470 )
+position = Vector2( 1141, 473 )
 scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 14 )
 
@@ -759,7 +759,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

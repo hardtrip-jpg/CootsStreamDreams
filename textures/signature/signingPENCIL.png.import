@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/signingPENCIL.png-5593b05c609993559091b7502ec5d259.stex"
+path="res://.import/signingPENCIL.png-6bfb0b277ece224938a1a5f4439dcada.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wellvos cumdump/signinggame/signingPENCIL.png"
-dest_files=[ "res://.import/signingPENCIL.png-5593b05c609993559091b7502ec5d259.stex" ]
+source_file="res://textures/signature/signingPENCIL.png"
+dest_files=[ "res://.import/signingPENCIL.png-6bfb0b277ece224938a1a5f4439dcada.stex" ]
 
 [params]
 

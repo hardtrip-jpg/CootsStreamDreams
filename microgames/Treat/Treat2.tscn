@@ -35,4 +35,4 @@ position = Vector2( -172, 437 )
 position = Vector2( -11, 7 )
 
 [node name="YarnBall" parent="." index="6"]
-frame = 7
+frame = 3

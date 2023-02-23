@@ -40,11 +40,15 @@ var treat_games :=[
 	"res://microgames/Treat/Treat3.tscn",
 	"res://microgames/Treat/Treat4.tscn"
 ]
+var signing_games :=[
+	"res://microgames/Signature/DEFSignature.tscn"
+]
 var all_game_levels := [
 	chess_games,
 	button_games,
 	amongus_games,
-	treat_games
+	treat_games,
+	signing_games
 	]
 	
 var current_game_levels : Array = all_game_levels.duplicate()
