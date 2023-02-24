@@ -42,7 +42,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if mouse_amount > mouse_success:
+	if mouse_amount > (mouse_success / Global.current_speed):
 		is_over_success()
 	
 func _input(event: InputEvent) -> void:

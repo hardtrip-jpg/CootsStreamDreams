@@ -660,7 +660,6 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
