@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://microgames/Treat/DEFTreat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://textures/treat/snack6.png" type="Texture" id=2]
 [ext_resource path="res://textures/treat/snack2.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 49, 47 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 65, 54.5 )
 
 [node name="DEFTreat" instance=ExtResource( 1 )]
 
@@ -13,7 +19,8 @@ texture = ExtResource( 3 )
 position = Vector2( -203, 64 )
 
 [node name="CollisionShape2D" parent="Treat1/Step1" index="0"]
-position = Vector2( 9.5, 5.5 )
+position = Vector2( 5, 6 )
+shape = SubResource( 1 )
 
 [node name="Treat3" parent="." index="3"]
 texture = ExtResource( 2 )
@@ -22,7 +29,8 @@ texture = ExtResource( 2 )
 position = Vector2( -168, 437 )
 
 [node name="CollisionShape2D" parent="Treat3/Step3" index="0"]
-position = Vector2( -15, 2 )
+position = Vector2( -15, 12.5 )
+shape = SubResource( 2 )
 
 [node name="YarnBall" parent="." index="6"]
-frame = 0
+frame = 5
