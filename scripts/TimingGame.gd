@@ -18,7 +18,7 @@ func _ready() -> void:
 	timer.start()
 
 func _input(event: InputEvent) -> void:
-	if mouse_over and event.is_action_pressed("click") and is_timing:
+	if event.is_action_pressed("click") and is_timing:
 		current_step += 1
 		animation_steps.play("step" + str(current_step))
 	elif event.is_action_pressed("click"):

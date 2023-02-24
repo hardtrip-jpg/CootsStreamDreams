@@ -1,20 +1,162 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=66 format=2]
 
-[ext_resource path="res://scripts/ClickLocation.gd" type="Script" id=1]
-[ext_resource path="res://textures/amongus/amongusgame.png" type="Texture" id=2]
-[ext_resource path="res://textures/amongus/amongusgameGREEN.png" type="Texture" id=3]
-[ext_resource path="res://textures/amongus/amongusgamebackground.png" type="Texture" id=4]
-[ext_resource path="res://textures/cootsheadblender.png" type="Texture" id=5]
-[ext_resource path="res://sound/Among Us (Emergency Meeting) - Sound Effect (HD).ogg" type="AudioStream" id=6]
-[ext_resource path="res://sound/Painful Scream Sound effect no copyright.ogg" type="AudioStream" id=7]
+[ext_resource path="res://scripts/Luddy.gd" type="Script" id=1]
+[ext_resource path="res://textures/luddy/luddyroom.png" type="Texture" id=2]
+[ext_resource path="res://textures/luddy/arrow2.png" type="Texture" id=3]
+[ext_resource path="res://textures/luddy/arrow1.png" type="Texture" id=4]
+[ext_resource path="res://textures/luddy/luddycoots.png" type="Texture" id=5]
+[ext_resource path="res://sound/484344__inspectorj__bike-bell-ding-single-01-01.wav" type="AudioStream" id=6]
+[ext_resource path="res://sound/gocoots.wav" type="AudioStream" id=7]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=8]
 [ext_resource path="res://textures/yarnball/yarnball.png" type="Texture" id=9]
 [ext_resource path="res://textures/yarnball/yarnstringend.png" type="Texture" id=10]
 [ext_resource path="res://textures/yarnball/yarnstring.png" type="Texture" id=11]
 [ext_resource path="res://scripts/SFX.gd" type="Script" id=13]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 301, 140.5 )
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 91, 0, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 2 )
+region = Rect2( 182, 0, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 273, 0, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 54, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 2 )
+region = Rect2( 91, 54, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 2 )
+region = Rect2( 182, 54, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 2 )
+region = Rect2( 273, 54, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 108, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 2 )
+region = Rect2( 91, 108, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 2 )
+region = Rect2( 182, 108, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 2 )
+region = Rect2( 273, 108, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 162, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 2 )
+region = Rect2( 91, 162, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 2 )
+region = Rect2( 182, 162, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 2 )
+region = Rect2( 273, 162, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 216, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 2 )
+region = Rect2( 91, 216, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 2 )
+region = Rect2( 182, 216, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 2 )
+region = Rect2( 273, 216, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 270, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 2 )
+region = Rect2( 91, 270, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 2 )
+region = Rect2( 182, 270, 91, 54 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 2 )
+region = Rect2( 273, 270, 91, 54 )
+
+[sub_resource type="SpriteFrames" id=51]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 964, 211.5 )
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 963, 181 )
+
+[sub_resource type="RectangleShape2D" id=62]
+extents = Vector2( 963, 135 )
+
+[sub_resource type="SpriteFrames" id=54]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=59]
+animations = [ {
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
@@ -79,7 +221,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("EndScreen:texture")
+tracks/1/path = NodePath("Step2:monitoring")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -87,11 +229,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ null ]
+"update": 0,
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("EndScreen:scale")
+tracks/2/path = NodePath("Step1:monitorable")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -99,11 +241,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Step1:monitorable")
+tracks/3/path = NodePath("Step2:monitorable")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -112,10 +254,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EndScreen/Head:texture")
+tracks/4/path = NodePath("Step2/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -124,10 +266,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ null ]
+"values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("EndScreen/Head:position")
+tracks/5/path = NodePath("Step1/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -136,10 +278,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EndScreen/Head:rotation_degrees")
+tracks/6/path = NodePath("Coots:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -148,10 +290,10 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("EndScreen/Head:scale")
+tracks/7/path = NodePath("Arrow:flip_v")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -160,13 +302,74 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Arrow:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Arrow:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Middle/CollisionShape2D:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Coots:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Arrow:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "failed"
+[sub_resource type="Animation" id=22]
+resource_name = "between"
+length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("EndScreen:texture")
+tracks/0/path = NodePath("Coots:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -175,10 +378,25 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "failed"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Step1/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("EndScreen:scale")
+tracks/1/path = NodePath("Step2/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -186,11 +404,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("EndScreen/Head:texture")
+tracks/2/path = NodePath("Middle/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -199,50 +417,141 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "high"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Step2/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Step1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Coots:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("EndScreen/Head:position")
+tracks/3/path = NodePath("Arrow:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -322, -8 ), Vector2( 334, -8 ) ]
+"values": [ 0.0, 180.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EndScreen/Head:rotation_degrees")
+tracks/4/path = NodePath("Middle/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 122.229, 231.323 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("EndScreen/Head:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.183957, 0.183957 ) ]
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=20]
+resource_name = "low"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Step2/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Step1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Coots:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Arrow:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 180.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Middle/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=60]
 resource_name = "step1"
-length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
+tracks/0/path = NodePath("Step2/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -254,7 +563,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Step1:monitorable")
+tracks/1/path = NodePath("Middle/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -265,67 +574,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-
-[sub_resource type="Animation" id=21]
-resource_name = "step2"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Step1:monitorable")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=22]
-resource_name = "step3"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Step1:monitoring")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Step1:monitorable")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+tracks/2/type = "value"
+tracks/2/path = NodePath("Arrow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
 }
 
 [sub_resource type="Animation" id=24]
 resource_name = "success"
 tracks/0/type = "value"
-tracks/0/path = NodePath("EndScreen:texture")
+tracks/0/path = NodePath("Middle/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -334,10 +599,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("EndScreen:scale")
+tracks/1/path = NodePath("Step2/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -345,11 +610,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("EndScreen/Head:texture")
+tracks/2/path = NodePath("Step1/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -358,43 +623,31 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("EndScreen/Head:position")
+tracks/3/path = NodePath("Coots:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -322, -8 ), Vector2( 334, -8 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EndScreen/Head:rotation_degrees")
+tracks/4/path = NodePath("Arrow:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 122.229, 231.323 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("EndScreen/Head:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -514,7 +767,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "timer"
-length = 3.5
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Yarn/YarnEnd6:texture")
 tracks/0/interp = 1
@@ -546,7 +799,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -558,7 +811,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 2.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -570,7 +823,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2.5 ),
+"times": PoolRealArray( 0, 2.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -582,7 +835,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 3.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -622,7 +875,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 1.5 ),
+"times": PoolRealArray( 1.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -636,7 +889,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 2.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -650,7 +903,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 2.5 ),
+"times": PoolRealArray( 2.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -664,7 +917,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 3.3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -678,7 +931,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 3.5 ),
+"times": PoolRealArray( 3.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -686,31 +939,55 @@ tracks/12/keys = {
 } ]
 }
 
-[node name="DEFAmongUs" type="Node2D"]
+[node name="DEFLuddy" type="Node2D"]
 script = ExtResource( 1 )
-timer_time = 3.5
-area_array = [ NodePath("Step1") ]
-step_amounts = 2
-game_text = "Vote Green out"
+timer_time = 4.0
+area_array = [ NodePath("Step1"), NodePath("Step2") ]
+step_amounts = 15
+game_text = "Do the Luddy"
 
-[node name="BG" type="Sprite" parent="."]
-position = Vector2( 960, 539 )
-texture = ExtResource( 2 )
+[node name="BG1" type="AnimatedSprite" parent="."]
+position = Vector2( 973, 493 )
+scale = Vector2( 21.8023, 21.8023 )
+frames = SubResource( 51 )
+frame = 1
+playing = true
 
 [node name="Step1" type="Area2D" parent="."]
-position = Vector2( 1215, 542 )
+position = Vector2( 1142, 604 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
-position = Vector2( 17, -1.5 )
-shape = SubResource( 1 )
+position = Vector2( -182, 269.5 )
+shape = SubResource( 52 )
 
-[node name="EndScreen" type="Sprite" parent="."]
-position = Vector2( 959, 542 )
-scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 4 )
+[node name="Step2" type="Area2D" parent="."]
+position = Vector2( 775, 235 )
+monitoring = false
+monitorable = false
 
-[node name="Head" type="Sprite" parent="EndScreen"]
-texture = ExtResource( 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step2"]
+position = Vector2( 182, -57 )
+shape = SubResource( 53 )
+
+[node name="Middle" type="Area2D" parent="."]
+position = Vector2( 775, 567 )
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle"]
+position = Vector2( 182, -61 )
+shape = SubResource( 62 )
+
+[node name="Arrow" type="AnimatedSprite" parent="."]
+position = Vector2( 885, 504 )
+frames = SubResource( 54 )
+frame = 1
+playing = true
+
+[node name="Coots" type="AnimatedSprite" parent="."]
+position = Vector2( 1268, 646 )
+scale = Vector2( 21.802, 21.802 )
+frames = SubResource( 59 )
 
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -746,17 +1023,19 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 7
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "step1"
 anims/RESET = SubResource( 19 )
-anims/failed = SubResource( 25 )
-anims/step1 = SubResource( 20 )
-anims/step2 = SubResource( 21 )
-anims/step3 = SubResource( 22 )
+anims/between = SubResource( 22 )
+anims/failed = SubResource( 23 )
+anims/high = SubResource( 61 )
+anims/low = SubResource( 20 )
+anims/step1 = SubResource( 60 )
 anims/success = SubResource( 24 )
 
 [node name="AnimationTimer" type="AnimationPlayer" parent="."]
@@ -780,5 +1059,8 @@ text = "Win the Match"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
 script = ExtResource( 13 )
-start = ExtResource( 6 )
 success = ExtResource( 7 )
+interact = ExtResource( 6 )
+
+[connection signal="mouse_entered" from="Middle" to="." method="_on_Middle_mouse_entered"]
+[connection signal="mouse_exited" from="Middle" to="." method="_on_Middle_mouse_exited"]

@@ -21,14 +21,14 @@
 [ext_resource path="res://sound/Nom Nom Nom sound effect.ogg" type="AudioStream" id=19]
 [ext_resource path="res://sound/Eat ⧸ Munch 2 Sound Effect (download).ogg" type="AudioStream" id=20]
 
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 44.5, 47.5 )
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 72, 55.5 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 70, 60.5 )
 
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 56, 49 )
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 84, 80.5 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
@@ -506,8 +506,8 @@ area_2d = NodePath("Step1")
 position = Vector2( -563, -298 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treat1/Step1"]
-position = Vector2( -1, 7.5 )
-shape = SubResource( 25 )
+position = Vector2( 1, 16 )
+shape = SubResource( 28 )
 
 [node name="Treat2" type="Sprite" parent="."]
 position = Vector2( 959, 539 )
@@ -532,8 +532,8 @@ area_2d = NodePath("Step3")
 position = Vector2( 286, 129 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treat3/Step3"]
-position = Vector2( -3.5, 8.5 )
-shape = SubResource( 27 )
+position = Vector2( -9, 10.5 )
+shape = SubResource( 29 )
 
 [node name="EndScreen" type="Sprite" parent="."]
 position = Vector2( 959, 542 )

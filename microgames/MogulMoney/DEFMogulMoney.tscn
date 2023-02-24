@@ -80,7 +80,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("EndScreen:texture")
+tracks/1/path = NodePath("Step1:monitorable")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -89,10 +89,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ null ]
+"values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("EndScreen:scale")
+tracks/2/path = NodePath("EndScreen3:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -101,25 +101,13 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Step1:monitorable")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ ExtResource( 9 ) ]
 }
 
 [sub_resource type="Animation" id=25]
 resource_name = "failed"
 tracks/0/type = "value"
-tracks/0/path = NodePath("EndScreen:texture")
+tracks/0/path = NodePath("EndScreen3:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -129,18 +117,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 13 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("EndScreen:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -230,7 +206,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=24]
 resource_name = "success"
 tracks/0/type = "value"
-tracks/0/path = NodePath("EndScreen:texture")
+tracks/0/path = NodePath("EndScreen3:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -240,18 +216,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("EndScreen:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -569,6 +533,14 @@ position = Vector2( 992, 894 )
 position = Vector2( 10, -1.5 )
 shape = SubResource( 26 )
 
+[node name="EndScreen2" type="Sprite" parent="."]
+position = Vector2( 959, 542 )
+texture = ExtResource( 9 )
+
+[node name="EndScreen3" type="Sprite" parent="."]
+position = Vector2( 959, 542 )
+texture = ExtResource( 9 )
+
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
 
@@ -601,9 +573,10 @@ position = Vector2( 1826, 980 )
 texture = ExtResource( 6 )
 
 [node name="YarnBall" type="AnimatedSprite" parent="."]
-position = Vector2( 133, 945 )
+position = Vector2( 80.5, 997.5 )
+scale = Vector2( 0.589844, 0.589844 )
 frames = SubResource( 16 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -620,15 +593,6 @@ anims/success = SubResource( 24 )
 anims/RESET = SubResource( 17 )
 anims/text = SubResource( 18 )
 anims/timer = SubResource( 7 )
-
-[node name="EndScreen2" type="Sprite" parent="."]
-position = Vector2( 959, 542 )
-texture = ExtResource( 9 )
-
-[node name="EndScreen" type="Sprite" parent="."]
-position = Vector2( 959, 542 )
-scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 13 )
 
 [node name="GameText" type="Label" parent="."]
 anchor_left = 0.5

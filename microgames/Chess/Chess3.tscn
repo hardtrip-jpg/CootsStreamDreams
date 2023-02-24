@@ -524,7 +524,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "timer"
-length = 5.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Yarn/YarnEnd6:texture")
 tracks/0/interp = 1
@@ -532,7 +532,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -544,7 +544,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -556,7 +556,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.1 ),
+"times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -568,7 +568,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2.8 ),
+"times": PoolRealArray( 0, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -580,7 +580,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 3.6 ),
+"times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -592,7 +592,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 4.3 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 11 ), ExtResource( 10 ) ]
@@ -604,7 +604,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.7 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -618,7 +618,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 1.4 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -632,7 +632,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 2.1 ),
+"times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -646,7 +646,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 2.8 ),
+"times": PoolRealArray( 4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -660,7 +660,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 3.6 ),
+"times": PoolRealArray( 5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -674,7 +674,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 4.3 ),
+"times": PoolRealArray( 6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -688,7 +688,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 5 ),
+"times": PoolRealArray( 7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -698,7 +698,7 @@ tracks/12/keys = {
 
 [node name="DEFChessGame" type="Node2D"]
 script = ExtResource( 1 )
-timer_time = 5.0
+timer_time = 7.0
 area_array = [ NodePath("Step1"), NodePath("Step2"), NodePath("Step3") ]
 step_amounts = 3
 game_text = "Win the match"
@@ -798,7 +798,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
