@@ -16,6 +16,8 @@ var speed_level_amount := 0
 
 var animation_speed := .9
 
+var is_regular := false
+
 var chess_games := [
 	"res://microgames/Chess/DEFChess.tscn",
 	"res://microgames/Chess/Chess2.tscn",
@@ -67,7 +69,12 @@ var all_game_levels := [
 var current_game_levels : Array = all_game_levels.duplicate()
 
 
-
+func _initialize() -> void:
+	remaining_health = health
+	previous_health = remaining_health
+	current_speed = default_speed
+	add_speed = default_add_speed
+	current_game_levels = all_game_levels.duplicate()
 
 
 func _next_level() -> String:

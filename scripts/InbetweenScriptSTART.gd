@@ -10,22 +10,15 @@ var next_level_text
 var now_level : String
 
 func _ready() -> void:
+	Global._initialize()
 	randomize()
 	Input.set_custom_mouse_cursor(null)
 	BgMusicTest.bg_music()
 	timer.connect("timeout", self, "timeout")
+	
 	#Set Level Amount
-	Global.level_amount += 1
-	Global.speed_level_amount += 1
 	current_label.text = str(Global.level_amount).pad_decimals(0).pad_zeros(3)
 	
-	#Determine Success
-	animation_coots.playback_speed = Global.current_speed
-	if Global.previous_success:
-		animation_coots.play("success")
-	else:
-		animation_coots.play("failed")
-		
 	#Set Health
 	set_health()
 	
@@ -37,25 +30,7 @@ func _ready() -> void:
 	
 	now_level = Global._next_level()
 	
-	if Global.remaining_health < Global.previous_health:
-		animation.play("Health" + str(Global.previous_health))
-		Global.previous_health = Global.remaining_health
-		yield(animation, "animation_finished")
-	
-	Global.previous_health = Global.remaining_health
-	if Global.remaining_health <= 0:
-		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
-	
-	if Global.is_regular and Global.level_amount >= 30:
-		print("boss_level")
-	
-	if Global.speed_level_amount > 4:
-		Global.speed_up()
-		BgMusicTest.speed_up()
-		animation.play("SpeedUp")
-		yield(animation, "animation_finished")
-	else:
-		timer.start()
+	timer.start()
 	BgMusicTest.bg_music()
 
 

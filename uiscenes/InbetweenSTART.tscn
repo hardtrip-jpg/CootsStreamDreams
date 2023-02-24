@@ -1,6 +1,6 @@
 [gd_scene load_steps=87 format=2]
 
-[ext_resource path="res://scripts/InbetweenScript.gd" type="Script" id=1]
+[ext_resource path="res://scripts/InbetweenScriptSTART.gd" type="Script" id=1]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=2]
 [ext_resource path="res://textures/transitionscreen/transitionscreen.png" type="Texture" id=3]
 [ext_resource path="res://textures/transitionscreen/transitionscreenlifes.png" type="Texture" id=4]
@@ -885,6 +885,7 @@ position = Vector2( 729, 416 )
 scale = Vector2( 0.751278, 0.751278 )
 frames = SubResource( 127 )
 animation = "normal"
+frame = 1
 playing = true
 
 [node name="Current" type="Label" parent="."]
@@ -899,7 +900,7 @@ text = "999"
 position = Vector2( 415, 269 )
 scale = Vector2( 1e-05, 1e-05 )
 frames = SubResource( 67 )
-frame = 14
+frame = 23
 playing = true
 
 [node name="BG" type="Sprite" parent="."]
