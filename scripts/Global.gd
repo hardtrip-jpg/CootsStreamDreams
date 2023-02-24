@@ -53,8 +53,11 @@ var mogul_money :=[
 	"res://microgames/MogulMoney/MogulMoney5.tscn",
 	"res://microgames/MogulMoney/MogulMoney6.tscn"
 ]
-var luddy_game :=[
+var luddy_games :=[
 	"res://microgames/Luddy/DEFLuddy.tscn"
+]
+var whomp_games :=[
+	"res://microgames/Whomp/DEFWhomp.tscn"
 ]
 var all_game_levels := [
 	chess_games,
@@ -63,7 +66,8 @@ var all_game_levels := [
 	treat_games,
 	signing_games,
 	mogul_money,
-	luddy_game
+	luddy_games,
+	whomp_games
 	]
 	
 var current_game_levels : Array = all_game_levels.duplicate()

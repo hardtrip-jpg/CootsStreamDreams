@@ -45,3 +45,6 @@ position = Vector2( -172, 437 )
 [node name="CollisionShape2D" parent="Treat3/Step3" index="0"]
 position = Vector2( -5, 4.5 )
 shape = SubResource( 3 )
+
+[node name="YarnBall" parent="." index="6"]
+frame = 0

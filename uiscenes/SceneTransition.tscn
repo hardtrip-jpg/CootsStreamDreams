@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/SceneTransition.gd" type="Script" id=1]
 
@@ -33,6 +33,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "none"
+length = 0.1
+
 [node name="SceneTransition" type="CanvasLayer"]
 script = ExtResource( 1 )
 
@@ -46,3 +50,4 @@ color = Color( 0, 0, 0, 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 anims/dissolve = SubResource( 2 )
+anims/none = SubResource( 3 )
