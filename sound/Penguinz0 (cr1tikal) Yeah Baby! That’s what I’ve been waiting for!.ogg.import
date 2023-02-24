@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Penguinz0 (cr1tikal) Yeah Baby! That’s what I’ve been waiting for!.ogg-7e8764113d8b809de5bdd6b44940be99.oggstr"
+
+[deps]
+
+source_file="res://sound/Penguinz0 (cr1tikal) Yeah Baby! That’s what I’ve been waiting for!.ogg"
+dest_files=[ "res://.import/Penguinz0 (cr1tikal) Yeah Baby! That’s what I’ve been waiting for!.ogg-7e8764113d8b809de5bdd6b44940be99.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
