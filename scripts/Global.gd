@@ -43,19 +43,28 @@ var treat_games :=[
 var signing_games :=[
 	"res://microgames/Signature/DEFSignature.tscn"
 ]
+var mogul_money :=[
+	"res://microgames/MogulMoney/DEFMogulMoney.tscn",
+	"res://microgames/MogulMoney/MogulMoney2.tscn",
+	"res://microgames/MogulMoney/MogulMoney3.tscn",
+	"res://microgames/MogulMoney/MogulMoney4.tscn",
+	"res://microgames/MogulMoney/MogulMoney5.tscn",
+	"res://microgames/MogulMoney/MogulMoney6.tscn"
+]
 var all_game_levels := [
 	chess_games,
 	button_games,
 	amongus_games,
 	treat_games,
-	signing_games
+	signing_games,
+	mogul_money
 	]
 	
 var current_game_levels : Array = all_game_levels.duplicate()
 
 
-func _ready() -> void:
-	randomize()
+
+
 
 func _next_level() -> String:
 	if current_game_levels.size() <= 0:

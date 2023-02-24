@@ -10,6 +10,7 @@ var next_level_text
 var now_level : String
 
 func _ready() -> void:
+	randomize()
 	Input.set_custom_mouse_cursor(null)
 	BgMusicTest.bg_music()
 	timer.connect("timeout", self, "timeout")
