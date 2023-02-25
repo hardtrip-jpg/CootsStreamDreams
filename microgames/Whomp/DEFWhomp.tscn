@@ -560,7 +560,7 @@ shape = SubResource( 26 )
 [node name="EndScreen" type="Sprite" parent="."]
 position = Vector2( 959, 542 )
 scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 14 )
+texture = ExtResource( 4 )
 
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -596,7 +596,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

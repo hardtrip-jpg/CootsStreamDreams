@@ -52,8 +52,8 @@ func _on_mouse_exited() -> void:
 
 #Special
 func is_over_success() -> void:
-	is_success = true
 	disable()
+	is_success = true
 	Global.previous_success = true
 	sfx.success()
 	animation_steps.play("success")

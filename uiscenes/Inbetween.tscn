@@ -1001,6 +1001,7 @@ position = Vector2( 729, 416 )
 scale = Vector2( 0.751278, 0.751278 )
 frames = SubResource( 127 )
 animation = "normal"
+frame = 1
 playing = true
 
 [node name="Current" type="Label" parent="."]
@@ -1016,7 +1017,7 @@ text = "999"
 position = Vector2( 415, 269 )
 scale = Vector2( 1e-05, 1e-05 )
 frames = SubResource( 67 )
-frame = 45
+frame = 52
 playing = true
 
 [node name="BG" type="Sprite" parent="."]
@@ -1117,3 +1118,4 @@ texture = ExtResource( 17 )
 
 [node name="BossSetup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+bus = "Music"

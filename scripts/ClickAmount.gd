@@ -7,9 +7,6 @@ var current_amount : int = 0
 func _ready() -> void:
 	click_amount = click_amount / Global.current_speed
 
-func _process(delta: float) -> void:
-	if current_step >= step_amounts:
-		is_over_success()
 
 func _input(event: InputEvent) -> void:
 	if mouse_over and event.is_action_pressed("click"):

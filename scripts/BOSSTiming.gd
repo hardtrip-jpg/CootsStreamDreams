@@ -58,7 +58,7 @@ func is_over_success() -> void:
 	animation_steps.playback_speed = 1
 	animation_steps.play("success")
 	yield(animation_steps, "animation_finished")
-	SceneTransition.change_scene("res://uiscenes/StartMenu.tscn","dissolve")
+	SceneTransition.change_scene("res://microgames/BOSSLEVELS/BOSSLuddy.tscn", "none")
 	
 func is_over_failure() -> void:
 	if !already_failed:
