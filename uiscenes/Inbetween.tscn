@@ -1,7 +1,7 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://scripts/InbetweenScript.gd" type="Script" id=1]
-[ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/tempDEBUGFONTINBETWEEN.tres" type="DynamicFont" id=2]
 [ext_resource path="res://textures/transitionscreen/transitionscreen.png" type="Texture" id=3]
 [ext_resource path="res://textures/transitionscreen/transitionscreenlifes.png" type="Texture" id=4]
 [ext_resource path="res://textures/transitionscreen/SpeedUp/speed_up_normal_935x312.png" type="Texture" id=5]
@@ -15,6 +15,7 @@
 [ext_resource path="res://sound/success_inbetween_1.wav" type="AudioStream" id=13]
 [ext_resource path="res://Wellvos cumdump/transitionscreen/chatWIN.ogv" type="VideoStream" id=14]
 [ext_resource path="res://Wellvos cumdump/transitionscreen/chatLOSE.ogv" type="VideoStream" id=15]
+[ext_resource path="res://sound/preboss.wav" type="AudioStream" id=16]
 
 [sub_resource type="SpriteFrames" id=127]
 animations = [ {
@@ -336,6 +337,36 @@ animations = [ {
 "name": "default",
 "speed": 60.0
 } ]
+
+[sub_resource type="Animation" id=131]
+resource_name = "BossTransition"
+length = 5.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BossSetup:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "boss_scene"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "CameraMove"
@@ -691,6 +722,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("BossSetup:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "SpeedUp"
@@ -892,6 +935,7 @@ margin_left = 1348.0
 margin_top = 745.0
 margin_right = 1483.0
 margin_bottom = 813.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "999"
 
@@ -899,7 +943,7 @@ text = "999"
 position = Vector2( 415, 269 )
 scale = Vector2( 1e-05, 1e-05 )
 frames = SubResource( 67 )
-frame = 51
+frame = 43
 playing = true
 
 [node name="BG" type="Sprite" parent="."]
@@ -932,6 +976,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BossTransition = SubResource( 131 )
 anims/CameraMove = SubResource( 6 )
 anims/Health1 = SubResource( 5 )
 anims/Health2 = SubResource( 4 )
@@ -983,3 +1028,6 @@ stream = ExtResource( 15 )
 autoplay = true
 expand = false
 bus = "SFX"
+
+[node name="BossSetup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )

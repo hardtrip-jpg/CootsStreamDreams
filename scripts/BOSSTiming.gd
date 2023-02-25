@@ -20,6 +20,7 @@ var current_speed := 1.3
 var current_smash : int
 
 func _ready() -> void:
+	BgMusicTest.boss_music()
 	sfx.start()
 	for area in area_array:
 		if area:

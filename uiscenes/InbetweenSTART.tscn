@@ -1,7 +1,7 @@
 [gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://scripts/InbetweenScriptSTART.gd" type="Script" id=1]
-[ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/tempDEBUGFONTINBETWEEN.tres" type="DynamicFont" id=2]
 [ext_resource path="res://textures/transitionscreen/transitionscreen.png" type="Texture" id=3]
 [ext_resource path="res://textures/transitionscreen/transitionscreenlifes.png" type="Texture" id=4]
 [ext_resource path="res://textures/transitionscreen/SpeedUp/speed_up_normal_935x312.png" type="Texture" id=5]
@@ -885,7 +885,6 @@ position = Vector2( 729, 416 )
 scale = Vector2( 0.751278, 0.751278 )
 frames = SubResource( 127 )
 animation = "normal"
-frame = 1
 playing = true
 
 [node name="Current" type="Label" parent="."]
@@ -893,6 +892,7 @@ margin_left = 1348.0
 margin_top = 745.0
 margin_right = 1483.0
 margin_bottom = 813.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "999"
 
@@ -900,7 +900,7 @@ text = "999"
 position = Vector2( 415, 269 )
 scale = Vector2( 1e-05, 1e-05 )
 frames = SubResource( 67 )
-frame = 23
+frame = 9
 playing = true
 
 [node name="BG" type="Sprite" parent="."]
