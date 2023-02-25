@@ -11,7 +11,8 @@ config_version=4
 [application]
 
 config/name="Coots Stream Dreams"
-run/main_scene="res://uiscenes/StartMenu.tscn"
+run/main_scene="res://uiscenes/TitleScreen.tscn"
+boot_splash/show_image=false
 config/icon="res://textures/cootsheadblender.png"
 
 [autoload]

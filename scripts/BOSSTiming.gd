@@ -16,7 +16,7 @@ var is_success := false
 var current_step := 1
 var already_failed := false
 var is_timing := false
-var current_speed := 1.3
+export var current_speed := 1.3
 var current_smash : int
 
 func _ready() -> void:
@@ -38,8 +38,7 @@ func _process(delta: float) -> void:
 	if current_step >= step_amounts:
 		is_over_success()
 		
-	animation_steps.playback_speed = current_speed
-	animation_timer.playback_speed = current_speed
+
 	
 
 #Interactions
@@ -52,10 +51,11 @@ func _on_mouse_exited() -> void:
 
 #Special
 func is_over_success() -> void:
+	animation_steps.stop()
 	is_success = true
 	disable()
 	Global.previous_success = true
-	sfx.success()
+	animation_steps.playback_speed = 1
 	animation_steps.play("success")
 	yield(animation_steps, "animation_finished")
 	SceneTransition.change_scene("res://uiscenes/StartMenu.tscn","dissolve")
@@ -85,6 +85,7 @@ func _on_timer_timeout() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and mouse_over and !not_spamming:
+		sfx.interact_random()
 		current_speed = 2
 		current_smash += 1
 		if current_smash >= 10:
@@ -98,5 +99,10 @@ func _input(event: InputEvent) -> void:
 func doing() -> void:
 	current_step += 1
 	current_speed += .25
+	animation_steps.playback_speed = current_speed
+	animation_timer.playback_speed = current_speed
 	animation_steps.play("step" + str(current_step))
 	animation_timer.seek(0)
+
+func stop_music() -> void:
+	BgMusicTest.stop()
