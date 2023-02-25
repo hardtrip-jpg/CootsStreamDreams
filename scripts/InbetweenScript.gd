@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	#Determine Success
 	animation_coots.playback_speed = Global.current_speed
-	if Global.previous_success:
+	if Global.previous_success and !Global.is_regular and !Global.level_amount >= 30:
 		animation_coots.play("success")
 	else:
 		animation_coots.play("failed")
@@ -43,13 +43,14 @@ func _ready() -> void:
 		yield(animation, "animation_finished")
 	
 	Global.previous_health = Global.remaining_health
+	
 	if Global.remaining_health <= 0:
 		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
-	
-	if Global.is_regular and Global.level_amount >= 30:
-		SceneTransition.change_scene("res://microgames/BOSSLEVELS/BOSSTiming.tscn","dissolve")
-	
-	if Global.speed_level_amount > 4:
+	elif Global.is_regular and Global.level_amount >= 30:
+		BgMusicTest.stop()
+		animation.play("BossTransition")
+		yield(animation, "animation_finished")
+	elif Global.speed_level_amount > 4:
 		Global.speed_up()
 		BgMusicTest.speed_up()
 		animation.play("SpeedUp")
@@ -73,3 +74,6 @@ func set_health() -> void:
 		
 func timeout():
 	change_level()
+
+func boss_scene():
+	SceneTransition.change_scene("res://microgames/BOSSLEVELS/BOSSTiming.tscn","none")

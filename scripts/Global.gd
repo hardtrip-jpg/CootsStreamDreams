@@ -11,12 +11,12 @@ var add_speed := default_add_speed
 
 var previous_success := true
 
-var level_amount := 0
+var level_amount := 25
 var speed_level_amount := 0
 
 var animation_speed := .9
 
-var is_regular := false
+var is_regular := true
 
 var chess_games := [
 	"res://microgames/Chess/DEFChess.tscn",
@@ -59,6 +59,9 @@ var luddy_games :=[
 var whomp_games :=[
 	"res://microgames/Whomp/DEFWhomp.tscn"
 ]
+var typing_games :=[
+	"res://microgames/Typing/DEFTyping.tscn"
+]
 var all_game_levels := [
 	chess_games,
 	button_games,
@@ -67,7 +70,8 @@ var all_game_levels := [
 	signing_games,
 	mogul_money,
 	luddy_games,
-	whomp_games
+	whomp_games,
+	typing_games
 	]
 	
 var current_game_levels : Array = all_game_levels.duplicate()
@@ -78,6 +82,7 @@ func _initialize() -> void:
 	previous_health = remaining_health
 	current_speed = default_speed
 	add_speed = default_add_speed
+	level_amount = 0
 	current_game_levels = all_game_levels.duplicate()
 
 

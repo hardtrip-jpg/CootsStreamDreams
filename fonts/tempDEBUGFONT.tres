@@ -3,7 +3,7 @@
 [ext_resource path="res://fonts/AgencyFB-Bold.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 60
-outline_size = 10
-outline_color = Color( 0.145098, 0.145098, 0.184314, 1 )
+size = 120
+outline_size = 15
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
