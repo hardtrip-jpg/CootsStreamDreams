@@ -1016,7 +1016,7 @@ text = "999"
 position = Vector2( 415, 269 )
 scale = Vector2( 1e-05, 1e-05 )
 frames = SubResource( 67 )
-frame = 7
+frame = 45
 playing = true
 
 [node name="BG" type="Sprite" parent="."]
