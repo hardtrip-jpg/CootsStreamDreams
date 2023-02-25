@@ -11,7 +11,7 @@ var add_speed := default_add_speed
 
 var previous_success := true
 
-var level_amount := 25
+var level_amount := 0
 var speed_level_amount := 0
 
 var animation_speed := .9
@@ -78,6 +78,7 @@ var current_game_levels : Array = all_game_levels.duplicate()
 
 
 func _initialize() -> void:
+	speed_level_amount = 0
 	remaining_health = health
 	previous_health = remaining_health
 	current_speed = default_speed
