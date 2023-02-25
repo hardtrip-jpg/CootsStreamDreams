@@ -1,7 +1,7 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/Luddy.gd" type="Script" id=1]
-[ext_resource path="res://textures/luddy/luddyroom.png" type="Texture" id=2]
+[ext_resource path="res://textures/luddy/luddydanceroom1.png" type="Texture" id=2]
 [ext_resource path="res://textures/luddy/arrow2.png" type="Texture" id=3]
 [ext_resource path="res://textures/luddy/arrow1.png" type="Texture" id=4]
 [ext_resource path="res://textures/luddy/luddycoots.png" type="Texture" id=5]
@@ -13,110 +13,7 @@
 [ext_resource path="res://textures/yarnball/yarnstring.png" type="Texture" id=11]
 [ext_resource path="res://sound/crying.wav" type="AudioStream" id=12]
 [ext_resource path="res://scripts/SFX.gd" type="Script" id=13]
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 2 )
-region = Rect2( 91, 0, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 2 )
-region = Rect2( 182, 0, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 2 )
-region = Rect2( 273, 0, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 54, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 2 )
-region = Rect2( 91, 54, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 2 )
-region = Rect2( 182, 54, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 2 )
-region = Rect2( 273, 54, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 108, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 2 )
-region = Rect2( 91, 108, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 2 )
-region = Rect2( 182, 108, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 2 )
-region = Rect2( 273, 108, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 162, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 2 )
-region = Rect2( 91, 162, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 2 )
-region = Rect2( 182, 162, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 2 )
-region = Rect2( 273, 162, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 216, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 2 )
-region = Rect2( 91, 216, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=45]
-atlas = ExtResource( 2 )
-region = Rect2( 182, 216, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 2 )
-region = Rect2( 273, 216, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 270, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 2 )
-region = Rect2( 91, 270, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 2 )
-region = Rect2( 182, 270, 91, 54 )
-
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 2 )
-region = Rect2( 273, 270, 91, 54 )
-
-[sub_resource type="SpriteFrames" id=51]
-animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[ext_resource path="res://textures/luddy/luddyLOSE.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 964, 211.5 )
@@ -365,6 +262,30 @@ tracks/12/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("Coots:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Lose:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=22]
 resource_name = "between"
@@ -415,6 +336,30 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Coots:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Lose:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -945,14 +890,12 @@ script = ExtResource( 1 )
 timer_time = 4.0
 area_array = [ NodePath("Step1"), NodePath("Step2") ]
 step_amounts = 15
-game_text = "Do the Luddy"
+game_text = "Move it Up and Down"
 
-[node name="BG1" type="AnimatedSprite" parent="."]
-position = Vector2( 973, 493 )
-scale = Vector2( 21.8023, 21.8023 )
-frames = SubResource( 51 )
-frame = 2
-playing = true
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 966, 488 )
+scale = Vector2( 22, 22 )
+texture = ExtResource( 2 )
 
 [node name="Step1" type="Area2D" parent="."]
 position = Vector2( 1142, 604 )
@@ -980,14 +923,20 @@ position = Vector2( 182, -61 )
 shape = SubResource( 62 )
 
 [node name="Arrow" type="AnimatedSprite" parent="."]
-position = Vector2( 885, 504 )
+position = Vector2( 1520, 504 )
 frames = SubResource( 54 )
 playing = true
 
 [node name="Coots" type="AnimatedSprite" parent="."]
-position = Vector2( 1268, 646 )
-scale = Vector2( 21.802, 21.802 )
+position = Vector2( 1021, 642 )
+scale = Vector2( 22, 22 )
 frames = SubResource( 59 )
+
+[node name="Lose" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1021, 642 )
+scale = Vector2( 22, 22 )
+texture = ExtResource( 14 )
 
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -1023,7 +972,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

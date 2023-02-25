@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/tempDEBUGFONTINBETWEEN.tres" type="DynamicFont" id=1]
+[ext_resource path="res://uiscenes/SettingsMenu.gd" type="Script" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -641.0
+margin_top = -283.5
+margin_right = 641.0
+margin_bottom = 283.5
+color = Color( 0.227451, 0.227451, 0.227451, 0.643137 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+margin_right = 1222.0
+margin_bottom = 136.0
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_right = 153.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 1 )
+text = "SFX"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 157.0
+margin_right = 253.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="SFX" type="HSlider" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 257.0
+margin_right = 1222.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -20.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 140.0
+margin_right = 1222.0
+margin_bottom = 276.0
+
+[node name="ext" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer2"]
+margin_right = 234.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 1 )
+text = "Music"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer2"]
+margin_left = 238.0
+margin_right = 284.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="Music" type="HSlider" parent="ColorRect/VBoxContainer/HBoxContainer2"]
+margin_left = 288.0
+margin_right = 1222.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -20.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 280.0
+margin_right = 1222.0
+margin_bottom = 416.0
+
+[node name="Music" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer3"]
+margin_right = 427.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 1 )
+text = "Fullscreen"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer3"]
+margin_left = 431.0
+margin_right = 431.0
+margin_bottom = 136.0
+size_flags_stretch_ratio = 0.05
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect/VBoxContainer/HBoxContainer3"]
+margin_left = 435.0
+margin_right = 511.0
+margin_bottom = 136.0
+
+[connection signal="value_changed" from="ColorRect/VBoxContainer/HBoxContainer/SFX" to="." method="_on_SFX_value_changed"]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/HBoxContainer2/Music" to="." method="_on_Music_value_changed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_CheckButton_pressed"]

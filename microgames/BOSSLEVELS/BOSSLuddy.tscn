@@ -951,7 +951,7 @@ game_text = "Do the Luddy"
 position = Vector2( 973, 493 )
 scale = Vector2( 21.8023, 21.8023 )
 frames = SubResource( 51 )
-frame = 12
+frame = 15
 playing = true
 
 [node name="Step1" type="Area2D" parent="."]
@@ -982,6 +982,7 @@ shape = SubResource( 62 )
 [node name="Arrow" type="AnimatedSprite" parent="."]
 position = Vector2( 885, 504 )
 frames = SubResource( 54 )
+frame = 1
 playing = true
 
 [node name="Coots" type="AnimatedSprite" parent="."]
@@ -1023,7 +1024,6 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

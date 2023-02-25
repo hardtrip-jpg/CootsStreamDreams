@@ -2832,7 +2832,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 66 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -2887,25 +2887,31 @@ interact = ExtResource( 6 )
 [node name="Punch1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = 5.0
+bus = "SFX"
 
 [node name="Punch2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = 5.0
+bus = "SFX"
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 volume_db = -4.382
+bus = "SFX"
 
 [node name="Dash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 volume_db = 10.0
+bus = "SFX"
 
 [node name="FinalScream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = 1.2
+bus = "SFX"
 
 [node name="Explosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+bus = "SFX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 959, 541 )

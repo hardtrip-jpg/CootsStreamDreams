@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://textures/menu/main menu background.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://textures/menu/main menu cootsbox.png" type="Texture" id=9]
 [ext_resource path="res://textures/menu/main menu keyboard.png" type="Texture" id=10]
 [ext_resource path="res://textures/menu/main menu mouse.png" type="Texture" id=11]
+[ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=12]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -209,5 +210,15 @@ autoplay = "default"
 anims/RESET = SubResource( 2 )
 anims/default = SubResource( 1 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = 1722.0
+margin_top = 988.0
+margin_right = 2072.0
+margin_bottom = 1130.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 12 )
+text = "Settings"
+
 [connection signal="pressed" from="Regular" to="." method="_on_Regular_pressed"]
 [connection signal="pressed" from="Endless" to="." method="_on_Endless_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
