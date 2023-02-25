@@ -47,7 +47,7 @@ func _ready() -> void:
 		SceneTransition.change_scene("res://uiscenes/FailScreen.tscn", "dissolve")
 	
 	if Global.is_regular and Global.level_amount >= 30:
-		print("boss_level")
+		SceneTransition.change_scene("res://microgames/BOSSLEVELS/BOSSTiming.tscn","dissolve")
 	
 	if Global.speed_level_amount > 4:
 		Global.speed_up()
