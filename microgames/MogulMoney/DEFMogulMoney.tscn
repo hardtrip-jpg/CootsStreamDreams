@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://textures/mogulmoney/mogulmoneycoots.ogv" type="VideoStream" id=1]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://textures/mogulmoney/mogulmoneyscreenWIN.png" type="Texture" id=11]
 [ext_resource path="res://textures/mogulmoney/mogulmoneyquestion1-1.png" type="Texture" id=12]
 [ext_resource path="res://textures/mogulmoney/mogulmoneyscreenLOSE.png" type="Texture" id=13]
+[ext_resource path="res://textures/mogulmoney/meowmoneyONEFRAME.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 258, 140.5 )
@@ -514,6 +515,10 @@ area_array = [ NodePath("Step1") ]
 step_amounts = 2
 game_text = "Answer the Question"
 
+[node name="Fix" type="Sprite" parent="."]
+position = Vector2( 960, 541 )
+texture = ExtResource( 14 )
+
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_right = 1922.0
 margin_bottom = 1082.0
@@ -576,7 +581,7 @@ texture = ExtResource( 6 )
 position = Vector2( 80.5, 997.5 )
 scale = Vector2( 0.589844, 0.589844 )
 frames = SubResource( 16 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

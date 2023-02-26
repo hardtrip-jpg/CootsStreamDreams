@@ -14,6 +14,7 @@ config/name="Coots Stream Dreams"
 run/main_scene="res://uiscenes/TitleScreen.tscn"
 boot_splash/show_image=false
 config/icon="res://textures/cootsheadblender.png"
+config/windows_native_icon="res://cootsheadblender.ico"
 
 [autoload]
 

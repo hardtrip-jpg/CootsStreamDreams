@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/TimingGame.gd" type="Script" id=1]
 [ext_resource path="res://textures/button/luddybuttonSTART.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://textures/button/luddybuttonLOSE.png" type="Texture" id=4]
 [ext_resource path="res://textures/button/luddybuttonWIN.png" type="Texture" id=5]
 [ext_resource path="res://sound/Among Us (Emergency Meeting) - Sound Effect (HD).ogg" type="AudioStream" id=6]
+[ext_resource path="res://textures/button/test.png" type="Texture" id=7]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=8]
 [ext_resource path="res://textures/yarnball/yarnball.png" type="Texture" id=9]
 [ext_resource path="res://textures/yarnball/yarnstringend.png" type="Texture" id=10]
@@ -624,7 +625,7 @@ shape = SubResource( 1 )
 [node name="EndScreen" type="Sprite" parent="."]
 position = Vector2( 959, 542 )
 scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="Yarn" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -660,7 +661,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/TimingGame.gd" type="Script" id=1]
 [ext_resource path="res://textures/button/luddybuttonSTART.png" type="Texture" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://textures/button/luddybuttonLOSE.png" type="Texture" id=4]
 [ext_resource path="res://textures/button/luddybuttonWIN.png" type="Texture" id=5]
 [ext_resource path="res://sound/Among Us (Emergency Meeting) - Sound Effect (HD).ogg" type="AudioStream" id=6]
+[ext_resource path="res://sound/Painful Scream Sound effect no copyright.ogg" type="AudioStream" id=7]
 [ext_resource path="res://fonts/tempDEBUGFONT.tres" type="DynamicFont" id=8]
 [ext_resource path="res://textures/yarnball/yarnball.png" type="Texture" id=9]
 [ext_resource path="res://textures/yarnball/yarnstringend.png" type="Texture" id=10]
 [ext_resource path="res://textures/yarnball/yarnstring.png" type="Texture" id=11]
+[ext_resource path="res://textures/button/test.png" type="Texture" id=12]
 [ext_resource path="res://scripts/SFX.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -126,7 +128,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("EndScreen:scale")
@@ -660,7 +662,7 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 1
+frame = 6
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -694,6 +696,7 @@ text = "Win the Match"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
 script = ExtResource( 13 )
+fail = ExtResource( 7 )
 interact = ExtResource( 6 )
 
 [node name="OnTime" type="AnimationPlayer" parent="."]
