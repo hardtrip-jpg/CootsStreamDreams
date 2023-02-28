@@ -12,7 +12,7 @@ var mouse_over := false
 
 var current_speed := Global.current_speed
 var already_failed := false
-var is_high := true
+var is_high := false
 
 func _ready() -> void:
 	BgMusicTest.menu_music()

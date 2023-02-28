@@ -25,6 +25,7 @@ func _ready() -> void:
 			var current_area = get_node(area)
 			current_area.connect("mouse_entered", self, "_on_mouse_entered")
 			current_area.connect("mouse_exited", self, "_on_mouse_exited")
+	animation_steps.play("step1")
 	timer.connect("timeout", self, "_on_timer_timeout")
 	timer.wait_time = timer_time / current_speed
 	label_game_text.text = game_text

@@ -666,7 +666,7 @@ script = ExtResource( 1 )
 timer_time = 7.0
 area_array = [ NodePath("Step1"), NodePath("Step2") ]
 step_amounts = 3
-game_text = "Win the match"
+game_text = "Win with White Rook"
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 960, 539 )
@@ -759,7 +759,6 @@ texture = ExtResource( 10 )
 [node name="YarnBall" type="AnimatedSprite" parent="."]
 position = Vector2( 133, 945 )
 frames = SubResource( 16 )
-frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
